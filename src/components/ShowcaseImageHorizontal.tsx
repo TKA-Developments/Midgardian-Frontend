@@ -26,8 +26,11 @@ export const ShowcaseImageHorizontal = ({
         </h3>
       </div>
       <div className="flex flex-col sm:flex-row gap-5">
-        {images.map((image) => (
-          <div className="flex flex-row sm:flex-col flex-1 items-center gap-10">
+        {images.map((image, idx) => (
+          <div
+            className="flex flex-row sm:flex-col flex-1 items-center gap-10"
+            key={idx}
+          >
             <img
               src={image.imageSource}
               className="object-cover max-w-[100px] h-[175px]"

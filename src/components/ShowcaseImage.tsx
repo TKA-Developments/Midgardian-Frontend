@@ -28,8 +28,8 @@ export const ShowcaseImage = ({
       >
         {imageSource instanceof Array ? (
           <>
-            {imageSource.map((imageSourceSingle) => (
-              <img src={imageSourceSingle} className="w-full" />
+            {imageSource.map((imageSourceSingle, idx) => (
+              <img key={idx} src={imageSourceSingle} className="w-full" />
             ))}
           </>
         ) : (
