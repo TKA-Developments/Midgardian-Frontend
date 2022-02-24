@@ -7,8 +7,8 @@ export type CardsProps = {
 export const Cards = ({ cardsData }: CardsProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {cardsData.map((cardData) => (
-        <Card {...cardData} />
+      {cardsData.map((cardData, idx) => (
+        <Card key={idx} {...cardData} />
       ))}
     </div>
   );
