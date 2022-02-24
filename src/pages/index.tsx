@@ -1,118 +1,155 @@
 import type { NextPage } from "next";
+import Link from "next/link";
+import { FaDiscord, FaGamepad, FaRocket } from "react-icons/fa";
 import { Alert } from "../components/Alert";
+import { Cards } from "../components/Cards/Cards";
 import { ImageCarousel } from "../components/ImageCarousel";
+import { Introduction } from "../components/Introduction";
 import { Jumbotron } from "../components/Jumbotron";
+import { Locations } from "../components/Locations";
 import { ShowcaseImage } from "../components/ShowcaseImage";
 import { ShowcaseImageHorizontal } from "../components/ShowcaseImageHorizontal";
 import { ShowcaseMisc } from "../components/ShowcaseMisc";
+import { Stats } from "../components/Stats";
+import { StepsRow } from "../components/Steps/StepsRow";
 import { WhoAreWe } from "../components/WhoAreWe";
 
 const Index: NextPage = () => {
   return (
     <>
-      <style jsx global>{`
-        body {
-          background-color: black;
-        }
-      `}</style>
       <div className="flex flex-col items-center">
-        <div className="max-w-7xl">
-          <Jumbotron />
-          <div className="my-12 mx-10">
-            <ShowcaseImage
-              title="WELCOME TO THE BORED APE YACHT CLUB"
-              description="BAYC is a collection of 10,000 Bored Ape NFTs—unique digital collectibles living on the Ethereum blockchain. Your Bored Ape doubles as your Yacht Club membership card, and grants access to members-only benefits, the first of which is access to THE BATHROOM, a collaborative graffiti board. Future areas and perks can be unlocked by the community through roadmap activation."
-              imageSource={[
-                "https://ik.imagekit.io/bayc/assets/ape1.png",
-                "https://ik.imagekit.io/bayc/assets/ape2.png",
-                "https://ik.imagekit.io/bayc/assets/ape3.png",
-                "https://ik.imagekit.io/bayc/assets/ape4.png",
+        <Jumbotron />
+        <Introduction />
+        <div className="my-24 mx-10 max-w-5xl">
+          <ShowcaseImage
+            imageSource="/img/avatar1.png"
+            description={`NomadDAO is a limited NFT collection where the token is a membership to a community of MMORPG lovers across the world
+
+Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Ragnarok Online? You are not alone :)`}
+            title={() => (
+              <h2 className="text-4xl font-bold mt-4 mb-8 text-typography-primary">
+                What is <span className="text-primary">NomadDAO</span>
+              </h2>
+            )}
+            afterDescriptionComponent={() => (
+              <Link href="https://discordapp.com">
+                <a className="mt-5 bg-discord text-white font-semibold w-full max-w-xl py-2 text-center rounded flex flex-row justify-center items-center">
+                  <FaDiscord className="text-white mr-2" /> Join Discord
+                </a>
+              </Link>
+            )}
+          />
+        </div>
+        <div className="my-14">
+          <Stats
+            data={[
+              {
+                icon: () => (
+                  <div className="bg-discord rounded-full p-2">
+                    <FaDiscord size={30} className="text-white" />
+                  </div>
+                ),
+                title: "100,000+",
+                subtitle: "Discord Members",
+              },
+              {
+                icon: () => (
+                  <div className="bg-opensea rounded-full p-2">
+                    <img
+                      src="https://storage.googleapis.com/opensea-static/Logomark/Logomark-Blue.svg"
+                      width={30}
+                      height={30}
+                    />
+                  </div>
+                ),
+                title: "1,000+",
+                subtitle: "NFTs to be launched",
+              },
+            ]}
+          />
+        </div>
+        <div className="my-24 mx-10 max-w-5xl">
+          <ShowcaseImage
+            imageSource="/img/avatar1.png"
+            description={`The Specs belongs to 5 job classes: Warrior, Cleric, Archer, Thief, Mage.
+
+Each character is uniquely generated over XX different traits, including accessories, face, hair styles, and more.
+
+All of them are stored as ERC-721 token in the Ethereum blockchain and hosted in IPFS.
+
+Each midgardian can be bought for 0.05 ETH`}
+            title="The Specs"
+          />
+        </div>
+        <div className="py-16 max-w-5xl mx-10">
+          <h3 className="text-center mb-8 text-3xl font-bold text-typography-primary">
+            The Benefits
+          </h3>
+          <Cards
+            cardsData={[
+              {
+                title: "Biggest Crypto MMORPG Community",
+                icon: () => <FaDiscord className="text-primary" size={30} />,
+              },
+              {
+                title: "Expand Your Network",
+                icon: () => <FaDiscord className="text-primary" size={30} />,
+              },
+              {
+                title: "Own Full Commercial Rights",
+                icon: () => <FaDiscord className="text-primary" size={30} />,
+              },
+              {
+                title: "2000+ Provably Rare MMORPG Characters",
+                icon: () => <FaDiscord className="text-primary" size={30} />,
+              },
+              {
+                title: "Grow Your Characters Through Involvement",
+                icon: () => <FaDiscord className="text-primary" size={30} />,
+              },
+              {
+                title: "Explore MMORPG Metaverses",
+                icon: () => <FaDiscord className="text-primary" size={30} />,
+              },
+            ]}
+          />
+        </div>
+        <div className="bg-secondary flex justify-center w-full py-16">
+          <div className="max-w-5xl mx-10">
+            <h2 className="text-center mb-4 text-3xl font-bold text-typography-primary">
+              Roadmap
+            </h2>
+            <p className="text-center text-typography-primary mb-12">
+              {`This roadmap outlines our goals and where we want to take
+            Midgardian. We have a lot of ideas and concepts that we are working
+            on. It may evolve over time and hopefully become even better!`}
+            </p>
+            <StepsRow
+              steps={[
+                {
+                  title: "Launch 1",
+                  description:
+                    "5000 NFT of Midgardian base class: Warrior, Cleric, Archer, Thief, Mage",
+                  icon: () => <FaRocket className="text-primary" size={35} />,
+                },
+                {
+                  title: "Launch 2",
+                  description:
+                    "10000 NFT of 2nd Job evolution of the base classes: Knight, Paladin, Priest, Monk, Hunter, Bard, Assassin, Rogue, Wizard, Sage",
+                  icon: () => <FaRocket className="text-primary" size={35} />,
+                },
+                {
+                  title: "Launch Games?",
+                  description:
+                    "We work hard with the community to launch any projects or initiatives that is of interest to the community. Be it meetups, products, services, or maybe even games!",
+                  icon: () => <FaGamepad className="text-primary" size={35} />,
+                },
               ]}
             />
           </div>
-          <div className="my-12 max-w-xs sm:max-w-sm md:max-w-3xl  lg:max-w-fit mx-auto">
-            <ImageCarousel />
-          </div>
-          <div className="my-12 mx-10">
-            <Alert
-              title="BUY AN APE"
-              containerProps={{
-                className: "bg-[#bfc500]",
-              }}
-              message="The initial sale has sold out. To get your Bored Ape, check out the collection on OpenSea."
-              componentBelow={() => (
-                <button className="bg-black text-white mt-4 rounded px-9 py-8 text-xl">
-                  {"BUY AN APE ON OPENSEA"}
-                </button>
-              )}
-            />
-          </div>
-          <hr />
-          <div className="my-12 mx-10">
-            <ShowcaseImage
-              title="THE SPECS"
-              description={`
-Each Bored Ape is unique and programmatically generated from over 170 possible traits, including expression, headwear, clothing, and more. All apes are dope, but some are rarer than others.
-
-The apes are stored as ERC-721 tokens on the Ethereum blockchain and hosted on IPFS. (See Record and Proof.) Purchasing an ape costs 0.08 ETH.
-
-To access members-only areas such as THE BATHROOM, Apeholders will need to be signed into their Metamask Wallet.`}
-              imageSource="https://ik.imagekit.io/bayc/assets/mystery-ape.gif"
-            />
-          </div>
-          <hr />
-          <div className="my-24 mx-10">
-            <ShowcaseImageHorizontal
-              title="WELCOME TO THE CLUB"
-              description="When you buy a Bored Ape, you’re not simply buying an avatar or a provably-rare piece of art. You are gaining membership access to a club whose benefits and offerings will increase over time. Your Bored Ape can serve as your digital identity, and open digital doors for you."
-              images={[
-                {
-                  imageSource: "https://ik.imagekit.io/bayc/assets/icon1.png",
-                  caption: "10,000 Provably-rare Bored Ape tokens",
-                },
-                {
-                  imageSource: "https://ik.imagekit.io/bayc/assets/icon2.png",
-                  caption:
-                    "Fair Launch, fair distribution: All apes cost 0.08 ETH",
-                },
-                {
-                  imageSource: "https://ik.imagekit.io/bayc/assets/icon3.png",
-                  caption:
-                    "Ownership and commercial usage rights given to the consumer over their NFT",
-                },
-                {
-                  imageSource: "https://ik.imagekit.io/bayc/assets/icon4.png",
-                  caption: "The Bathroom: A member's-only graffiti board",
-                },
-                {
-                  imageSource: "https://ik.imagekit.io/bayc/assets/icon5.png",
-                  caption:
-                    "Gain additional benefits through roadmap activations",
-                },
-              ]}
-            />
-          </div>
-          <hr />
-          <div className="my-24 mx-10">
-            <ShowcaseMisc
-              title="COMMUNITY TOOLS"
-              description="Here are some helpful tools created by the Bored Ape Yacht Club community. Please note that these are unofficial in nature. Every assignment of an ape's overall value or rarity is inherently subjective."
-              miscComponent={() => (
-                <div className="flex flex-col gap-3 w-full">
-                  <button className="text-black rounded-lg font-bold py-2 bg-[#bfc500]">
-                    NFTEXP.IO
-                  </button>
-                  <button className="text-black rounded-lg font-bold py-2 bg-[#bfc500]">
-                    RARITY.TOOLS
-                  </button>
-                </div>
-              )}
-            />
-          </div>
-          <hr />
-          <div className="my-24 mx-10">
-            <WhoAreWe />
-          </div>
+        </div>
+        <div className="py-16 max-w-5xl mx-10">
+          <WhoAreWe />
         </div>
       </div>
     </>

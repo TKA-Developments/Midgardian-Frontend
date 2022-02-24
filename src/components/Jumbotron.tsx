@@ -1,13 +1,13 @@
 export const Jumbotron = () => {
   return (
-    <div className="flex justify-center relative">
-      <img
-        src="https://ik.imagekit.io/bayc/assets/bayc-mutant-hero.jpg"
-        className=""
-      />
-      <button className="py-3 px-6 bg-indigo-700 text-white absolute bottom-10">
-        View on OpenSea
-      </button>
+    <div className="w-full flex items-center justify-center max-h-[1080px] h-screen bg-[url('/img/scenery.png')] bg-cover">
+      <h1 className="text-center text-white text-7xl font-bold">
+        Welcome
+        <br />
+        to
+        <br />
+        <span className="text-primary">NomadDAO</span>
+      </h1>
     </div>
   );
 };

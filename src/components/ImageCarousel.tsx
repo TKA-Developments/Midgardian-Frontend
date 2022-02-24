@@ -7,8 +7,9 @@ import { Autoplay, Pagination } from "swiper";
 export const ImageCarousel = () => {
   return (
     <Swiper
+      className="w-full"
       spaceBetween={50}
-      slidesPerView={3}
+      slidesPerView={5}
       modules={[Autoplay, Pagination]}
       loop={true}
       freeMode={true}

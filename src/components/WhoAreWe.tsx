@@ -1,58 +1,45 @@
+import ReactMarkdown from "react-markdown";
+
 export const WhoAreWe = () => {
   const members = [
     {
-      name: "GARGAMEL",
+      name: "XXX",
       quote: "STARCRAFT OBSESSED. EATS SMURFS.",
-      imageSource: "https://ik.imagekit.io/bayc/assets/garga.png",
+      imageSource: "/img/avatar2.png",
     },
     {
-      name: "GORDON GONER",
+      name: "YYY",
       quote: "REFORMED LEVERAGE ADDICT.",
-      imageSource: "https://ik.imagekit.io/bayc/assets/gordy.png",
-    },
-    {
-      name: "EMPEROR TOMATO KETCHUP",
-      quote: "SPENT ALL THEIR MONEY ON FIRST PRESSES AND PET-NAT.",
-      imageSource: "https://ik.imagekit.io/bayc/assets/tomato.png",
-    },
-    {
-      name: "NO SASS",
-      quote: "HERE FOR THE APES. NOT FOR THE SASS.",
-      imageSource: "https://ik.imagekit.io/bayc/assets/sass.png",
+      imageSource: "/img/avatar3.png",
     },
   ];
   return (
-    <div>
-      <div className="flex flex-col lg:flex-row items-center gap-4 mb-12">
-        <div className="flex-[4]">
-          <h2 className="text-4xl text-gray-500 text-right font-bold">
-            Who are we?
-          </h2>
-        </div>
-        <div className="flex-[6]">
-          <h3 className="text-gray-500 text-xl">
-            {
-              "BAYC was created by four friends who set out to make some dope apes, test our skills, and try to build something (ridiculous)."
-            }
-          </h3>
+    <div className="flex flex-col lg:flex-row items-center gap-5 mb-12">
+      <div>
+        <h2 className="text-4xl  text-typography-primary text-center font-bold mb-5">
+          The <span className="text-primary">NomadDAO</span> Team
+        </h2>
+        <div className="flex flex-row gap-5">
+          {members.map((member, idx) => {
+            return (
+              <div key={idx} className="w-full">
+                <img
+                  src={member.imageSource}
+                  className="object-cover w-full aspect-square"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {members.map((member, idx) => {
-          return (
-            <div key={idx}>
-              <div>
-                <img src={member.imageSource} />
-              </div>
-              <h3 className="text-xl text-white text-center mt-4">
-                {member.name}
-              </h3>
-              <h4 className="italic text-gray-300 text-center">
-                {member.quote}
-              </h4>
-            </div>
-          );
-        })}
+      <div>
+        <h3 className="text-typography-primary text-xl">
+          <ReactMarkdown>{`Midgardian was created by two friends who felt nostalgic about the good old days playing MMORPG games
+
+Since XXX is a crypto researcher and YYY is an artist, they set out to start midgardian project as an effort to connect with other MMORPG lovers
+
+They hope, one day, the metaverse will relive these days`}</ReactMarkdown>
+        </h3>
       </div>
     </div>
   );

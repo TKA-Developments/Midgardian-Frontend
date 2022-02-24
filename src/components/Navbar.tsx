@@ -11,7 +11,7 @@ import { classNames } from "../util/string";
 export const Navbar = () => {
   const [isNavbarOpened, setIsNavbarOpened] = useState(false);
   return (
-    <nav className="px-5">
+    <nav className="px-10 absolute z-50 w-full">
       <div className="flex flex-wrap flex-row justify-between mx-auto">
         <div>
           <img
@@ -58,7 +58,7 @@ export const Navbar = () => {
         >
           <ul className="flex flex-col md:flex-row gap-1 md:gap-3">
             <li className="flex">
-              <a className="text-white pl-2 py-2 w-full">Buy an ape</a>
+              <a className="text-white pl-2 py-2 w-full">Join Discord</a>
             </li>
             <li className="flex">
               <a className="text-white pl-2 py-2 w-full">Roadmap</a>
@@ -68,9 +68,6 @@ export const Navbar = () => {
             </li>
             <li className="flex">
               <a className="text-white pl-2 py-2 w-full">Gallery</a>
-            </li>
-            <li className="flex">
-              <a className="text-white pl-2 py-2 w-full">Members</a>
             </li>
           </ul>
           <ul className="my-6 md:my-0 justify-center flex flex-row gap-10 md:gap-4">
