@@ -15,7 +15,7 @@ export const StatsSeparator = () => {
 export const Stats = ({ data }: StatsProps) => {
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8 font-special-elite">
         {data.map(({ icon: Icon, title, subtitle }, idx) => (
           <>
             {idx !== 0 && <StatsSeparator />}

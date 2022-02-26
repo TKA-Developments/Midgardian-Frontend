@@ -1,6 +1,16 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { FaDiscord, FaGamepad, FaRocket } from "react-icons/fa";
+import {
+  FaChartBar,
+  FaDiscord,
+  FaGamepad,
+  FaGhost,
+  FaGlobe,
+  FaNetworkWired,
+  FaPen,
+  FaPeopleArrows,
+  FaRocket,
+} from "react-icons/fa";
 import { Alert } from "../components/Alert";
 import { Cards } from "../components/Cards/Cards";
 import { ImageCarousel } from "../components/ImageCarousel";
@@ -20,20 +30,20 @@ const Index: NextPage = () => {
       <div className="flex flex-col items-center">
         <Jumbotron />
         <Introduction />
-        <div className="my-24 mx-10 max-w-5xl">
+        <div className="my-24 mx-10 max-w-5xl font-special-elite">
           <ShowcaseImage
             imageSource="/img/avatar1.png"
-            description={`NomadDAO is a limited NFT collection where the token is a membership to a community of MMORPG lovers across the world
+            description={`Midgardian is a limited NFT collection where the token is a membership to a community of MMORPG lovers across the world
 
 Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Ragnarok Online? You are not alone :)`}
             title={() => (
-              <h2 className="text-4xl font-bold mt-4 mb-8 text-typography-primary">
-                What is <span className="text-primary">NomadDAO</span>
+              <h2 className="text-4xl font-bold mt-4 mb-8 text-typography-primary font-special-elite">
+                Welcome to <span className="text-primary">Midgardian</span>
               </h2>
             )}
             afterDescriptionComponent={() => (
               <Link href="https://discordapp.com">
-                <a className="mt-5 bg-discord text-white font-semibold w-full max-w-xl py-2 text-center rounded flex flex-row justify-center items-center">
+                <a className="mt-5 bg-discord text-white font-semibold w-full max-w-xl py-2 text-center rounded flex flex-row justify-center items-center font-sans">
                   <FaDiscord className="text-white mr-2" /> Join Discord
                 </a>
               </Link>
@@ -46,7 +56,7 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
               {
                 icon: () => (
                   <div className="bg-discord rounded-full p-2">
-                    <FaDiscord size={30} className="text-white" />
+                    <FaDiscord size={40} className="text-white" />
                   </div>
                 ),
                 title: "100,000+",
@@ -57,8 +67,8 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
                   <div className="bg-opensea rounded-full p-2">
                     <img
                       src="https://storage.googleapis.com/opensea-static/Logomark/Logomark-Blue.svg"
-                      width={30}
-                      height={30}
+                      width={40}
+                      height={40}
                     />
                   </div>
                 ),
@@ -81,7 +91,7 @@ Each midgardian can be bought for 0.05 ETH`}
             title="The Specs"
           />
         </div>
-        <div className="py-16 max-w-5xl mx-10">
+        <div className="py-16 max-w-5xl mx-10 font-special-elite">
           <h3 className="text-center mb-8 text-3xl font-bold text-typography-primary">
             The Benefits
           </h3>
@@ -89,32 +99,36 @@ Each midgardian can be bought for 0.05 ETH`}
             cardsData={[
               {
                 title: "Biggest Crypto MMORPG Community",
-                icon: () => <FaDiscord className="text-primary" size={30} />,
+                icon: () => (
+                  <FaPeopleArrows className="text-primary" size={30} />
+                ),
               },
               {
                 title: "Expand Your Network",
-                icon: () => <FaDiscord className="text-primary" size={30} />,
+                icon: () => (
+                  <FaNetworkWired className="text-primary" size={30} />
+                ),
               },
               {
                 title: "Own Full Commercial Rights",
-                icon: () => <FaDiscord className="text-primary" size={30} />,
+                icon: () => <FaPen className="text-primary" size={30} />,
               },
               {
                 title: "2000+ Provably Rare MMORPG Characters",
-                icon: () => <FaDiscord className="text-primary" size={30} />,
+                icon: () => <FaGhost className="text-primary" size={30} />,
               },
               {
                 title: "Grow Your Characters Through Involvement",
-                icon: () => <FaDiscord className="text-primary" size={30} />,
+                icon: () => <FaChartBar className="text-primary" size={30} />,
               },
               {
                 title: "Explore MMORPG Metaverses",
-                icon: () => <FaDiscord className="text-primary" size={30} />,
+                icon: () => <FaGlobe className="text-primary" size={30} />,
               },
             ]}
           />
         </div>
-        <div className="bg-secondary flex justify-center w-full py-16">
+        <div className="bg-[url('/img/wood1.png')] flex justify-center w-full py-16 font-special-elite">
           <div className="max-w-5xl mx-10">
             <h2 className="text-center mb-4 text-3xl font-bold text-typography-primary">
               Roadmap
@@ -148,7 +162,7 @@ Each midgardian can be bought for 0.05 ETH`}
             />
           </div>
         </div>
-        <div className="py-16 max-w-5xl mx-10">
+        <div className="py-16 max-w-5xl mx-10 font-special-elite">
           <WhoAreWe />
         </div>
       </div>

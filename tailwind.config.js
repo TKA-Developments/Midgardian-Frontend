@@ -10,6 +10,9 @@ module.exports = {
         discord: "#5865F2",
         opensea: "#2081E2",
       },
+      fontFamily: {
+        "special-elite": ["Special Elite", "cursive"],
+      },
     },
   },
   plugins: [],

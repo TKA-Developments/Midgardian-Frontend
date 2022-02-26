@@ -16,7 +16,7 @@ export const WhoAreWe = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center gap-5 mb-12">
       <div>
-        <h2 className="text-4xl  text-typography-primary text-center font-bold mb-5">
+        <h2 className="text-3xl  text-typography-primary text-center font-bold mb-5">
           The <span className="text-primary">NomadDAO</span> Team
         </h2>
         <div className="flex flex-row gap-5">
