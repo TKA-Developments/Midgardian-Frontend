@@ -5,15 +5,38 @@ export type ShowcaseImageProps = {
   title?: string | (() => JSX.Element);
   description?: string;
   afterDescriptionComponent?: () => JSX.Element;
-  imageSource?: string | Array<string>;
+  imageSource?: string | Array<string> | Function;
 };
 
 export const ShowcaseImage = ({
   title: Title,
   description,
-  imageSource,
+  imageSource: ImageSource,
   afterDescriptionComponent: AfterDescriptionComponent,
 }: ShowcaseImageProps) => {
+  let showcase;
+  if (ImageSource instanceof Array) {
+    showcase = (
+      <>
+        {ImageSource.map((imageSourceSingle, idx) => (
+          <img key={idx} src={imageSourceSingle} className="w-full" />
+        ))}
+      </>
+    );
+  } else if (ImageSource instanceof Function) {
+    showcase = (
+      <>
+        <ImageSource />
+      </>
+    );
+  } else {
+    showcase = (
+      <div className="bg-[url('/img/wood3.jpg')] p-1 rounded-xl">
+        <img src={ImageSource} className="w-full object-cover" />
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col lg:flex-row gap-5 font-special-elite">
       <div className="flex-1">
@@ -33,18 +56,10 @@ export const ShowcaseImage = ({
       <div
         className={classNames(
           "flex justify-center items-center",
-          imageSource instanceof Array ? "grid grid-cols-2 gap-4" : ""
+          ImageSource instanceof Array ? "grid grid-cols-2 gap-4" : ""
         )}
       >
-        {imageSource instanceof Array ? (
-          <>
-            {imageSource.map((imageSourceSingle, idx) => (
-              <img key={idx} src={imageSourceSingle} className="w-full" />
-            ))}
-          </>
-        ) : (
-          <img src={imageSource as string} className="w-full object-cover" />
-        )}
+        {showcase}
       </div>
     </div>
   );
