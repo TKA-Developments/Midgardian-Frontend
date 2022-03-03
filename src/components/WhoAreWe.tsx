@@ -14,10 +14,10 @@ export const WhoAreWe = () => {
     },
   ];
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-5 mb-12">
+    <div className="flex flex-col lg:flex-row items-center gap-10 mb-12">
       <div>
-        <h2 className="text-3xl  text-typography-primary text-center font-bold mb-5">
-          The <span className="text-primary">NomadDAO</span> Team
+        <h2 className="text-[48px]  text-typography-primary text-center font-bold mb-5">
+          The <span className="text-primary">The Midgardian Team</span> Team
         </h2>
         <div className="flex flex-row gap-5">
           {members.map((member, idx) => {
@@ -33,11 +33,13 @@ export const WhoAreWe = () => {
         </div>
       </div>
       <div>
-        <h3 className="text-typography-primary text-xl">
+        <h3 className="text-typography-primary text-[18px]">
           <ReactMarkdown>{`Midgardian was created by two friends who felt nostalgic about the good old days playing MMORPG games
-
+\n &nbsp;
+\n
 Since XXX is a crypto researcher and YYY is an artist, they set out to start midgardian project as an effort to connect with other MMORPG lovers
-
+\n &nbsp;
+\n
 They hope, one day, the metaverse will relive these days`}</ReactMarkdown>
         </h3>
       </div>

@@ -38,17 +38,17 @@ export const ShowcaseImage = ({
   }
 
   return (
-    <div className="flex flex-col lg:flex-row gap-5 font-special-elite">
+    <div className="flex flex-col lg:flex-row gap-14 font-special-elite">
       <div className="flex-1">
         {Title &&
           (typeof Title === "string" ? (
-            <h2 className="text-4xl font-bold mt-4 mb-8 text-typography-primary">
+            <h2 className="text-[60px] font-bold mt-4 mb-8 text-typography-primary">
               {Title}
             </h2>
           ) : (
             <Title />
           ))}
-        <h3 className="text-lg mt-2 text-typography-primary">
+        <h3 className="text-[28px] mt-2 text-typography-primary">
           <ReactMarkdown>{description ?? ""}</ReactMarkdown>
         </h3>
         {AfterDescriptionComponent && <AfterDescriptionComponent />}

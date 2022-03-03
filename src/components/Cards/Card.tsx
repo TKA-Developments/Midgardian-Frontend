@@ -14,7 +14,9 @@ export const Card = ({ title, icon: Icon }: CardProps) => {
         }}
         className="rounded-xl shadow min-h-[10rem] flex flex-col justify-between px-4 py-4"
       >
-        <h3 className="text-typography-primary font-bold text-2xl">{title}</h3>
+        <h3 className="text-typography-primary font-bold text-[24px]">
+          {title}
+        </h3>
         {Icon && <Icon />}
       </div>
     </div>
