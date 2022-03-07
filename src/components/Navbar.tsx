@@ -55,7 +55,7 @@ export const Navbar = () => {
             isNavbarOpened ? "" : "hidden"
           )}
         >
-          <ul className="flex flex-col md:flex-row gap-1 md:gap-3">
+          <ul className="flex flex-col md:flex-row gap-1 md:gap-3 text-[14px]">
             <li className="flex">
               <a className="text-white pl-2 py-2 w-full">Join Discord</a>
             </li>

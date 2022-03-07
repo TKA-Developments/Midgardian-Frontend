@@ -5,12 +5,12 @@ export const WhoAreWe = () => {
     {
       name: "XXX",
       quote: "STARCRAFT OBSESSED. EATS SMURFS.",
-      imageSource: "/img/avatar2.png",
+      imageSource: "/img/Warrior (M).jpg",
     },
     {
       name: "YYY",
       quote: "REFORMED LEVERAGE ADDICT.",
-      imageSource: "/img/avatar3.png",
+      imageSource: "/img/Thief (M).jpg",
     },
   ];
   return (

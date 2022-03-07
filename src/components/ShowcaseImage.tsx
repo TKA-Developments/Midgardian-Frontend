@@ -48,14 +48,14 @@ export const ShowcaseImage = ({
           ) : (
             <Title />
           ))}
-        <h3 className="text-[28px] mt-2 text-typography-primary">
+        <h3 className="text-[18px] mt-2 text-typography-primary">
           <ReactMarkdown>{description ?? ""}</ReactMarkdown>
         </h3>
         {AfterDescriptionComponent && <AfterDescriptionComponent />}
       </div>
       <div
         className={classNames(
-          "flex justify-center items-center",
+          "flex-1 flex justify-center items-center",
           ImageSource instanceof Array ? "grid grid-cols-2 gap-4" : ""
         )}
       >

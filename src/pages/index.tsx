@@ -68,25 +68,26 @@ export const Carrousel = () => {
         <Swiper
           onSwiper={setControlledSwiper}
           direction="vertical"
+          preventInteractionOnTransition={true}
           slidesPerView={3}
           spaceBetween={5}
           loop={true}
           freeMode={false}
         >
           <SwiperSlide>
-            <img src="/img/avatar1.png" className="object-cover" />
+            <img src="/img/Archer (F).jpg" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/avatar2.png" className="object-cover" />
+            <img src="/img/Cleric (F).jpg" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/avatar3.png" className="object-cover" />
+            <img src="/img/Mage (F).jpg" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/avatar2.png" className="object-cover" />
+            <img src="/img/Thief (F).jpg" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/avatar1.png" className="object-cover" />
+            <img src="/img/Warrior (F).jpg" className="object-cover" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -102,25 +103,26 @@ export const Carrousel = () => {
         <Swiper
           onSwiper={setControlledSwiper2}
           direction="vertical"
+          preventInteractionOnTransition={true}
           slidesPerView={3}
           spaceBetween={5}
           loop={true}
           freeMode={false}
         >
           <SwiperSlide>
-            <img src="/img/avatar1.png" className="object-cover" />
+            <img src="/img/Archer (M).jpg" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/avatar2.png" className="object-cover" />
+            <img src="/img/Cleric (M).jpg" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/avatar3.png" className="object-cover" />
+            <img src="/img/Mage (M).jpg" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/avatar2.png" className="object-cover" />
+            <img src="/img/Thief (M).jpg" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/avatar1.png" className="object-cover" />
+            <img src="/img/Warrior (M).jpg" className="object-cover" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -192,7 +194,7 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
         </div>
         <div className="my-24 mx-10 max-w-5xl">
           <ShowcaseImage
-            imageSource="/img/avatar1.png"
+            imageSource="/img/Warrior (M).jpg"
             description={`The Specs belongs to 5 job classes: Warrior, Cleric, Archer, Thief, Mage.
 \n&nbsp;
 \n
