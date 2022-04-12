@@ -30,6 +30,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { useEffect, useState } from "react";
+import { DISCORD_URL } from "../const";
 
 export const Carrousel = () => {
   const [controlledSwiper, setControlledSwiper] =
@@ -156,7 +157,7 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
               </h2>
             )}
             afterDescriptionComponent={() => (
-              <Link href="https://discordapp.com">
+              <Link href={DISCORD_URL}>
                 <a className="mt-5 bg-discord text-[24px] text-white font-semibold w-full max-w-xl py-2 text-center rounded flex flex-row justify-center items-center font-sans">
                   <FaDiscord className="text-white mr-2" /> Join Discord
                 </a>

@@ -6,6 +6,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import { DISCORD_URL, INSTAGRAM_URL, TWITTER_URL } from "../const";
 import { classNames } from "../util/string";
 
 export const Navbar = () => {
@@ -70,23 +71,23 @@ export const Navbar = () => {
             </li>
           </ul>
           <ul className="my-6 md:my-0 justify-center flex flex-row gap-10 md:gap-4">
-            <li>
+            {/* <li>
               <a>
                 <FaYoutube className="text-white" />
               </a>
-            </li>
+            </li> */}
             <li>
-              <a>
+              <a href={INSTAGRAM_URL}>
                 <FaInstagram className="text-white" />
               </a>
             </li>
             <li>
-              <a>
+              <a href={DISCORD_URL}>
                 <FaDiscord className="text-white" />
               </a>
             </li>
             <li>
-              <a>
+              <a href={TWITTER_URL}>
                 <FaTwitter className="text-white" />
               </a>
             </li>

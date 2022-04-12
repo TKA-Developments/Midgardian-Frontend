@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
+import { DISCORD_URL } from "../const";
 
 export const Footer = () => {
   return (
@@ -12,7 +13,7 @@ export const Footer = () => {
       className="flex flex-col gap-5 items-center pt-6 pb-4 px-5"
     >
       <h2 className="text-white font-bold">Brand</h2>
-      <Link href="https://discordapp.com">
+      <Link href={DISCORD_URL}>
         <a className="bg-discord text-white font-semibold w-full max-w-xl py-2 text-center rounded shadow-xl flex flex-row justify-center items-center">
           <FaDiscord className="text-white mr-2" /> Join Discord
         </a>
