@@ -76,19 +76,16 @@ export const Carrousel = () => {
           freeMode={false}
         >
           <SwiperSlide>
-            <img src="/img/Archer (F).jpg" className="object-cover" />
+            <img src="/img/nft/1.png" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/Cleric (F).jpg" className="object-cover" />
+            <img src="/img/nft/2.png" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/Mage (F).jpg" className="object-cover" />
+            <img src="/img/nft/3.png" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/Thief (F).jpg" className="object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="/img/Warrior (F).jpg" className="object-cover" />
+            <img src="/img/nft/4.png" className="object-cover" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -111,19 +108,16 @@ export const Carrousel = () => {
           freeMode={false}
         >
           <SwiperSlide>
-            <img src="/img/Archer (M).jpg" className="object-cover" />
+            <img src="/img/nft/5.png" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/Cleric (M).jpg" className="object-cover" />
+            <img src="/img/nft/6.png" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/Mage (M).jpg" className="object-cover" />
+            <img src="/img/nft/7.png" className="object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/Thief (M).jpg" className="object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="/img/Warrior (M).jpg" className="object-cover" />
+            <img src="/img/nft/8.png" className="object-cover" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -195,7 +189,7 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
         </div>
         <div className="my-24 mx-10 max-w-5xl">
           <ShowcaseImage
-            imageSource="/img/Warrior (M).jpg"
+            imageSource="/img/nft/11.png"
             description={`The Specs belongs to 5 job classes: Warrior, Cleric, Archer, Thief, Mage.
 \n&nbsp;
 \n
