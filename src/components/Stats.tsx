@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaDiscord } from "react-icons/fa";
 import { numberFormatter } from "../util/string";
-import { Stats as StatsBase } from "./Stats";
+import { Stats as StatsBase } from "./base/Stats";
 
 export const Stats = () => {
   const [discordMemberCount, setDiscordMemberCount] = useState<null | number>(

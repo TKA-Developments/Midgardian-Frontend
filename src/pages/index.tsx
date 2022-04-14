@@ -11,17 +11,17 @@ import {
   FaPeopleArrows,
   FaRocket,
 } from "react-icons/fa";
-import { Alert } from "../components/Alert";
+import { Alert } from "../components/base/Alert";
 import { Cards } from "../components/base/Cards/Cards";
-import { Introduction } from "../components/Introduction";
-import { Jumbotron } from "../components/Jumbotron";
-import { Locations } from "../components/Locations";
-import { ShowcaseImage } from "../components/ShowcaseImage";
-import { ShowcaseImageHorizontal } from "../components/ShowcaseImageHorizontal";
-import { ShowcaseMisc } from "../components/ShowcaseMisc";
+import { Introduction } from "../components/base/Introduction";
+import { Jumbotron } from "../components/base/Jumbotron";
+import { Locations } from "../components/base/Locations";
+import { ShowcaseImage } from "../components/base/ShowcaseImage";
+import { ShowcaseImageHorizontal } from "../components/base/ShowcaseImageHorizontal";
+import { ShowcaseMisc } from "../components/base/ShowcaseMisc";
 import { Stats } from "../components/Stats";
-import { StepsRow } from "../components/Steps/StepsRow";
-import { WhoAreWe } from "../components/WhoAreWe";
+import { StepsRow } from "../components/base/Steps/StepsRow";
+import { WhoAreWe } from "../components/base/WhoAreWe";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import SwiperInstance from "swiper";
 ("swiper");

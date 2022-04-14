@@ -6,8 +6,8 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { DISCORD_URL, INSTAGRAM_URL, NAME, TWITTER_URL } from "../const";
-import { classNames } from "../util/string";
+import { DISCORD_URL, INSTAGRAM_URL, NAME, TWITTER_URL } from "../../const";
+import { classNames } from "../../util/string";
 
 export const Navbar = () => {
   const [isNavbarOpened, setIsNavbarOpened] = useState(false);

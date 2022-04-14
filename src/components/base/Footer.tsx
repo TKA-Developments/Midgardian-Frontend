@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
-import { DISCORD_URL, NAME } from "../const";
+import { DISCORD_URL, NAME } from "../../const";
 
 export const Footer = () => {
   return (
