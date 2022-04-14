@@ -6,7 +6,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { DISCORD_URL, INSTAGRAM_URL, TWITTER_URL } from "../const";
+import { DISCORD_URL, INSTAGRAM_URL, NAME, TWITTER_URL } from "../const";
 import { classNames } from "../util/string";
 
 export const Navbar = () => {
@@ -15,9 +15,7 @@ export const Navbar = () => {
     <nav className="px-7 absolute z-50 w-full bg-secondary min-h-[76px] pt-4">
       <div className="flex flex-row flex-wrap justify-between w-full">
         <div>
-          <h1 className="text-typography-primary font-bold text-4xl">
-            Midgardian
-          </h1>
+          <h1 className="text-typography-primary font-bold text-4xl">{NAME}</h1>
         </div>
         <button
           type="button"

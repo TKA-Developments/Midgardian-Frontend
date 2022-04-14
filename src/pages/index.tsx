@@ -12,8 +12,7 @@ import {
   FaRocket,
 } from "react-icons/fa";
 import { Alert } from "../components/Alert";
-import { Cards } from "../components/Cards/Cards";
-import { ImageCarousel } from "../components/ImageCarousel";
+import { Cards } from "../components/base/Cards/Cards";
 import { Introduction } from "../components/Introduction";
 import { Jumbotron } from "../components/Jumbotron";
 import { Locations } from "../components/Locations";
@@ -160,32 +159,7 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
           />
         </div>
         <div className="my-14">
-          <Stats
-            data={[
-              {
-                icon: () => (
-                  <div className="bg-discord rounded-full p-2">
-                    <FaDiscord size={40} className="text-white" />
-                  </div>
-                ),
-                title: "100,000+",
-                subtitle: "Discord Members",
-              },
-              {
-                icon: () => (
-                  <div className="bg-opensea rounded-full p-2">
-                    <img
-                      src="https://storage.googleapis.com/opensea-static/Logomark/Logomark-Blue.svg"
-                      width={40}
-                      height={40}
-                    />
-                  </div>
-                ),
-                title: "1,000+",
-                subtitle: "NFTs to be launched",
-              },
-            ]}
-          />
+          <Stats />
         </div>
         <div className="my-24 mx-10 max-w-5xl">
           <ShowcaseImage
@@ -204,7 +178,7 @@ Each midgardian can be bought for 0.05 ETH`}
           />
         </div>
         <div className="py-16 max-w-5xl mx-10 font-special-elite">
-          <h3 className="text-center mb-8 text-[48px] font-bold text-primary">
+          <h3 className="text-center mb-8 text-[48px] font-bold text-primary rotate-6">
             The Benefits
           </h3>
           <Cards

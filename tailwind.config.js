@@ -12,6 +12,7 @@ module.exports = {
       },
       fontFamily: {
         "special-elite": ["Special Elite", "cursive"],
+        dragonwick: ["Dragonwick"],
       },
     },
   },

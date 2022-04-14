@@ -1,44 +1,51 @@
-export type Stat = {
-  icon?: () => JSX.Element;
-  title?: string;
-  subtitle?: string;
-};
+import { useEffect, useState } from "react";
+import { FaDiscord } from "react-icons/fa";
+import { numberFormatter } from "../util/string";
+import { Stats as StatsBase } from "./Stats";
 
-export type StatsProps = {
-  data: Array<Stat>;
-};
+export const Stats = () => {
+  const [discordMemberCount, setDiscordMemberCount] = useState<null | number>(
+    null
+  );
 
-export const StatsSeparator = () => {
-  return <div className="border-b-2 md:border-l-2 border-white" />;
-};
+  useEffect(() => {
+    fetch("https://discord.com/api/guilds/953662307483926648/widget.json")
+      .then((data) => data.json())
+      .then((data) => {
+        setDiscordMemberCount(data?.presence_count);
+      })
+      .catch(console.error);
+  }, []);
 
-export const Stats = ({ data }: StatsProps) => {
   return (
-    <>
-      <div className="flex flex-col md:flex-row gap-8 font-special-elite">
-        {data.map(({ icon: Icon, title, subtitle }, idx) => (
-          <>
-            {idx !== 0 && <StatsSeparator />}
-            <div className="flex flex-col items-center">
-              {Icon && (
-                <div className="mb-5">
-                  <Icon />
-                </div>
-              )}
-              {title && (
-                <h3 className="text-[30px] text-typography-primary font-bold">
-                  {title}
-                </h3>
-              )}
-              {subtitle && (
-                <h4 className="text-[16px] text-typography-primary font-semibold">
-                  {subtitle}
-                </h4>
-              )}
+    <StatsBase
+      data={[
+        {
+          icon: () => (
+            <div className="bg-discord rounded-full p-2">
+              <FaDiscord size={40} className="text-white" />
             </div>
-          </>
-        ))}
-      </div>
-    </>
+          ),
+          title:
+            discordMemberCount !== null
+              ? numberFormatter.format(discordMemberCount)
+              : "Loading...",
+          subtitle: "Online Discord Members",
+        },
+        {
+          icon: () => (
+            <div className="bg-opensea rounded-full p-2">
+              <img
+                src="https://storage.googleapis.com/opensea-static/Logomark/Logomark-Blue.svg"
+                width={40}
+                height={40}
+              />
+            </div>
+          ),
+          title: `${numberFormatter.format(1000)}+`,
+          subtitle: "NFTs to be launched",
+        },
+      ]}
+    />
   );
 };
