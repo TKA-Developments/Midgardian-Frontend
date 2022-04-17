@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { classNames } from "../util/string";
+import { classNames } from "../../util/string";
 
 export type AlertProps = {
   title: string;

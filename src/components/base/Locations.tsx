@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ButtonChoice } from "./ButtonChoice";
-import { ImageCarousel } from "./ImageCarousel";
 
 export enum ContinentChoice {
   All,
