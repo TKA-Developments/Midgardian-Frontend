@@ -30,6 +30,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { useEffect, useState } from "react";
 import { DISCORD_URL } from "../const";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 export const Carrousel = () => {
   const [controlledSwiper, setControlledSwiper] =
@@ -125,6 +126,28 @@ export const Carrousel = () => {
 };
 
 const Index: NextPage = () => {
+  const { width: windowWidth } = useWindowSize();
+
+  const [styleSign, setStyleSign] = useState<object>({});
+
+  useEffect(() => {
+    if ((windowWidth ?? 0) < 1024) {
+      setStyleSign({
+        backgroundImage: `url('/img/Board.svg')`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      });
+    } else {
+      setStyleSign({
+        backgroundImage: `url('/img/Board.svg')`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      });
+    }
+  }, [windowWidth]);
+
   return (
     <>
       <div
@@ -177,10 +200,20 @@ Each midgardian can be bought for 0.05 ETH`}
             title="The Specs"
           />
         </div>
-        <div className="py-16 max-w-5xl mx-10 font-special-elite">
-          <h3 className="text-center mb-8 text-[48px] font-bold text-primary rotate-6">
-            The Benefits
-          </h3>
+        <div className="py-16 font-special-elite h-full" style={styleSign}>
+          <div
+            className="mx-auto w-96 mb-8 py-5 rotate-6 flex flex-row justify-center items-center"
+            style={{
+              backgroundImage: `url('/img/Sign.svg')`,
+              backgroundSize: "auto",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          >
+            <h3 className="align-middle py-5 text-center text-[48px] font-bold text-primary">
+              The Benefits
+            </h3>
+          </div>
           <Cards
             cardsData={[
               {

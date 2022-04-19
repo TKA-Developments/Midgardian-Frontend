@@ -16,7 +16,7 @@ export const Stats = ({ data }: StatsProps) => {
   return (
     <div className="flex flex-col md:flex-row gap-8 font-special-elite">
       {data.map(({ icon: Icon, title, subtitle }, idx) => (
-        <div key={idx}>
+        <>
           {idx !== 0 && <StatsSeparator />}
           <div className="flex flex-col items-center">
             {Icon && (
@@ -35,7 +35,7 @@ export const Stats = ({ data }: StatsProps) => {
               </h4>
             )}
           </div>
-        </div>
+        </>
       ))}
     </div>
   );

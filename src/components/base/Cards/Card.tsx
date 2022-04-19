@@ -8,19 +8,9 @@ export type CardProps = {
 
 export const Card = ({ title, icon: Icon, containerStyle }: CardProps) => {
   return (
-    <div
-      className="bg-[url('/img/wood3.jpg')] p-1 rounded-xl rotate-6"
-      style={containerStyle}
-    >
-      <div
-        style={{
-          background:
-            "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/img/paper.jpg')",
-          backgroundSize: "cover",
-        }}
-        className="rounded-xl shadow min-h-[10rem] flex flex-col justify-between px-4 py-4"
-      >
-        <h3 className="text-typography-primary font-bold text-[24px] font-dragonwick">
+    <div style={containerStyle} className="py-2">
+      <div className="rounded-xl flex flex-col gap-7 mx-[15%] mt-[20%] mb-[20%]">
+        <h3 className="text-black font-bold text-[20px] font-dragonwick">
           {title}
         </h3>
         {Icon && <Icon />}
