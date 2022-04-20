@@ -5,6 +5,12 @@ import { Navbar as BaseNavbar, NavbarLinkType } from "./base/Navbar";
 export const Navbar = () => {
   return (
     <BaseNavbar
+      logo={{
+        style: {
+          filter: "brightness(0) invert(1)",
+        },
+        url: "/img/Logo.svg",
+      }}
       name={NAME}
       links={[
         {

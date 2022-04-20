@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { HTMLAttributes, useState } from "react";
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { DISCORD_URL, INSTAGRAM_URL, NAME, TWITTER_URL } from "../../const";
@@ -22,19 +22,32 @@ export type NavbarSocial = {
   destination: string;
 };
 
-export type NavbarProps = {
-  name: string;
-  links: Array<NavbarLink>;
-  socials?: Array<NavbarSocial>;
+export type NavbarLogo = {
+  style: HTMLAttributes<HTMLImageElement>["style"];
+  url: string;
 };
 
-export const Navbar = ({ name, links, socials }: NavbarProps) => {
+export type NavbarProps = {
+  name?: string;
+  links: Array<NavbarLink>;
+  socials?: Array<NavbarSocial>;
+  logo?: NavbarLogo;
+};
+
+export const Navbar = ({ logo, name, links, socials }: NavbarProps) => {
   const [isNavbarOpened, setIsNavbarOpened] = useState(false);
   return (
     <nav className="px-7 absolute z-50 w-full max-w-[1920px] bg-secondary min-h-[76px] pt-4">
       <div className="flex flex-row flex-wrap justify-between w-full">
-        <div>
-          <h1 className="text-typography-primary font-bold text-4xl">{name}</h1>
+        <div className="flex flex-row items-center gap-4">
+          {logo && (
+            <img src={logo.url} width={40} height={40} style={logo.style} />
+          )}
+          {name && (
+            <h1 className="text-typography-primary font-bold text-3xl">
+              {name}
+            </h1>
+          )}
         </div>
         <button
           type="button"
