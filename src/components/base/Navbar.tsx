@@ -96,8 +96,8 @@ export const Navbar = ({ logo, name, links, socials }: NavbarProps) => {
           </ul>
           {socials && (
             <ul className="my-6 md:my-0 justify-center flex flex-row gap-10 md:gap-4">
-              {socials.map((social) => (
-                <li>
+              {socials.map((social, idx) => (
+                <li key={idx}>
                   <a href={social.destination}>
                     <social.icon color="white" />
                   </a>

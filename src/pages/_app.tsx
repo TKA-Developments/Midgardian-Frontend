@@ -5,28 +5,28 @@ import { Navbar } from "../components/Navbar";
 import Script from "next/script";
 import Head from "next/head";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <Script
-          id="google-analytics-load"
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-R17B73YXBQ"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
+      <Script
+        id="google-analytics-load"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-R17B73YXBQ"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-R17B73YXBQ');
           `,
-          }}
-        />
+        }}
+      />
+      <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="apple-touch-icon"
@@ -67,4 +67,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;
