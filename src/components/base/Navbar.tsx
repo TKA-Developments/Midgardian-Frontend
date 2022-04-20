@@ -12,7 +12,7 @@ import { classNames } from "../../util/string";
 export const Navbar = () => {
   const [isNavbarOpened, setIsNavbarOpened] = useState(false);
   return (
-    <nav className="px-7 absolute z-50 w-full bg-secondary min-h-[76px] pt-4">
+    <nav className="px-7 absolute z-50 w-full max-w-[1920px] bg-secondary min-h-[76px] pt-4">
       <div className="flex flex-row flex-wrap justify-between w-full">
         <div>
           <h1 className="text-typography-primary font-bold text-4xl">{NAME}</h1>
