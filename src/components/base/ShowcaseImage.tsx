@@ -48,7 +48,7 @@ export const ShowcaseImage = ({
           ) : (
             <Title />
           ))}
-        <h3 className="text-[18px] mt-2 text-typography-primary">
+        <h3 className="text-[18px] mt-2 mb-3 text-typography-primary">
           <ReactMarkdown>{description ?? ""}</ReactMarkdown>
         </h3>
         {AfterDescriptionComponent && <AfterDescriptionComponent />}

@@ -5,7 +5,7 @@ module.exports = {
       colors: {
         primary: "#ECB365",
         "typography-primary": "#FFF",
-        "background-root": "#FFFFFF",
+        background: "#141e27",
         secondary: "#203239",
         discord: "#5865F2",
         opensea: "#2081E2",

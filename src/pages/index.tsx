@@ -31,6 +31,7 @@ import "swiper/css/pagination";
 import { useEffect, useState } from "react";
 import { DISCORD_URL } from "../const";
 import { useWindowSize } from "../hooks/useWindowSize";
+import { JoinDiscordButton } from "../components/JoinDiscordButton";
 
 export const Carrousel = () => {
   const [controlledSwiper, setControlledSwiper] =
@@ -150,14 +151,7 @@ const Index: NextPage = () => {
 
   return (
     <>
-      <div
-        style={{
-          background:
-            "linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('/img/pavestone.jpg')",
-          backgroundSize: "cover",
-        }}
-        className="flex flex-col items-center"
-      >
+      <div className="flex flex-col items-center">
         <Jumbotron />
         <Introduction />
         <div className="my-24 mx-10 max-w-5xl font-special-elite">
@@ -172,13 +166,7 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
                 Welcome to <span className="text-primary">Midgardian</span>
               </h2>
             )}
-            afterDescriptionComponent={() => (
-              <Link href={DISCORD_URL}>
-                <a className="mt-5 bg-discord text-[24px] text-white font-semibold w-full max-w-xl py-2 text-center rounded flex flex-row justify-center items-center font-sans">
-                  <FaDiscord className="text-white mr-2" /> Join Discord
-                </a>
-              </Link>
-            )}
+            afterDescriptionComponent={JoinDiscordButton}
           />
         </div>
         <div className="my-14">
@@ -200,7 +188,10 @@ Each midgardian can be bought for 0.05 ETH`}
             title="The Specs"
           />
         </div>
-        <div className="py-16 font-special-elite h-full" style={styleSign}>
+        <div
+          className="py-16 font-special-elite h-full w-full lg:w-auto"
+          style={styleSign}
+        >
           <div
             className="mx-auto w-96 mb-8 py-5 rotate-6 flex flex-row justify-center items-center"
             style={{
@@ -248,6 +239,7 @@ Each midgardian can be bought for 0.05 ETH`}
           />
         </div>
         <div
+          id="roadmap"
           style={{
             background:
               "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/img/wood1.png')",

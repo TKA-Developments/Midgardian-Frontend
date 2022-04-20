@@ -1,7 +1,7 @@
 import "../../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Footer } from "../components/base/Footer";
-import { Navbar } from "../components/base/Navbar";
+import { Navbar } from "../components/Navbar";
 import Script from "next/script";
 import Head from "next/head";
 
@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1"
         ></meta>
       </Head>
-      <div className="flex justify-center items-center bg-[#141e27]">
+      <div className="flex justify-center items-center bg-background">
         <div className="max-w-[1920px] w-full">
           <Navbar />
           <Component {...pageProps} />

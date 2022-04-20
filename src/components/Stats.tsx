@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaDiscord } from "react-icons/fa";
 import { numberFormatter } from "../util/string";
 import { Stats as StatsBase } from "./base/Stats";
+import { IconOpenSea } from "./icons/IconOpenSea";
 
 export const Stats = () => {
   return (
@@ -14,16 +15,12 @@ export const Stats = () => {
             </div>
           ),
           title: `${numberFormatter.format(100)}+`,
-          subtitle: "Online Discord Members",
+          subtitle: "Discord Members",
         },
         {
           icon: () => (
             <div className="bg-opensea rounded-full p-2">
-              <img
-                src="https://storage.googleapis.com/opensea-static/Logomark/Logomark-Blue.svg"
-                width={40}
-                height={40}
-              />
+              <IconOpenSea />
             </div>
           ),
           title: `${numberFormatter.format(1000)}+`,
