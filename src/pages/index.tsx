@@ -25,6 +25,7 @@ import { useEffect, useState } from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { JoinDiscordButton } from "../components/JoinDiscordButton";
 import { Carrousel } from "../components/Carousel";
+import Head from "next/head";
 
 const Index: NextPage = () => {
   const { width: windowWidth } = useWindowSize();
@@ -51,6 +52,9 @@ const Index: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Welcome to Midgardian - Midgardian</title>
+      </Head>
       <div className="flex flex-col items-center">
         <Jumbotron />
         <Introduction />
