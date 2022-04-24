@@ -146,7 +146,7 @@ Each midgardian can be bought for 0.05 ETH`}
           id="roadmap"
           style={{
             background:
-              "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/img/wood1.png')",
+              "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/img/roadmap-min.png')",
             backgroundSize: "cover",
           }}
           className=" flex justify-center w-full py-16 font-special-elite"

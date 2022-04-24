@@ -5,6 +5,7 @@ import { DISCORD_URL, INSTAGRAM_URL, NAME, TWITTER_URL } from "../../const";
 import { classNames } from "../../util/string";
 import { Icon } from "../icons/Icon";
 import { IconHamburger } from "../icons/IconHamburger";
+import Image from "next/image";
 
 export enum NavbarLinkType {
   Scroll,
@@ -23,7 +24,6 @@ export type NavbarSocial = {
 };
 
 export type NavbarLogo = {
-  style: HTMLAttributes<HTMLImageElement>["style"];
   url: string;
 };
 
@@ -41,7 +41,13 @@ export const Navbar = ({ logo, name, links, socials }: NavbarProps) => {
       <div className="flex flex-row flex-wrap justify-between w-full">
         <div className="flex flex-row items-center gap-4">
           {logo && (
-            <img src={logo.url} width={40} height={40} style={logo.style} />
+            <Image
+              alt="Logo"
+              src={logo.url}
+              width={40}
+              height={40}
+              className="brightness-0 invert"
+            />
           )}
           {name && (
             <h1 className="text-typography-primary font-bold text-3xl">

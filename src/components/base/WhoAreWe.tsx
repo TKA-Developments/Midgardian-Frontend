@@ -17,7 +17,7 @@ export const WhoAreWe = () => {
     <div className="flex flex-col lg:flex-row items-center gap-10 mb-12">
       <div>
         <h2 className="text-[48px]  text-typography-primary text-center font-bold mb-5">
-          The <span className="text-primary">The Midgardian</span> Team
+          The <span className="text-primary">Midgardian</span> Team
         </h2>
         <div className="flex flex-row gap-5">
           {members.map((member, idx) => {

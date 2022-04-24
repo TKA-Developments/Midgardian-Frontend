@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import Image from "next/image";
 import SwiperInstance from "swiper";
 
 export const Carrousel = () => {
@@ -9,20 +10,26 @@ export const Carrousel = () => {
     useState<SwiperInstance | null>(null);
   useEffect(() => {
     if (controlledSwiper) {
-      controlledSwiper.wrapperEl.classList.add("ease-linear");
-      controlledSwiper.on("slideNextTransitionEnd", () => {
+      const slide = () => {
         controlledSwiper.slideNext(5000);
-      });
-      controlledSwiper.slideNext(5000);
+      };
+
+      controlledSwiper.wrapperEl.classList.add("ease-linear");
+      controlledSwiper.on("slidePrevTransitionEnd", slide);
+      controlledSwiper.on("slideNextTransitionEnd", slide);
+      slide();
     }
   }, [controlledSwiper]);
   useEffect(() => {
     if (controlledSwiper2) {
-      controlledSwiper2.wrapperEl.classList.add("ease-linear");
-      controlledSwiper2.on("slidePrevTransitionEnd", () => {
+      const slide = () => {
         controlledSwiper2.slidePrev(5000);
-      });
-      controlledSwiper2.slidePrev(5000);
+      };
+
+      controlledSwiper2.wrapperEl.classList.add("ease-linear");
+      controlledSwiper2.on("slidePrevTransitionEnd", slide);
+      controlledSwiper2.on("slideNextTransitionEnd", slide);
+      slide();
     }
   }, [controlledSwiper2]);
 

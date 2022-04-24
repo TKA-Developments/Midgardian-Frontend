@@ -2,6 +2,10 @@ module.exports = {
   content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "scenery-dimmed":
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/scenery-min.png')",
+      },
       colors: {
         primary: "#ECB365",
         "typography-primary": "#FFF",
