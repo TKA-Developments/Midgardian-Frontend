@@ -10,6 +10,7 @@ module.exports = {
         primary: "#ECB365",
         "typography-primary": "#FFF",
         background: "#141e27",
+        "background-secondary": "#496D8E",
         secondary: "#203239",
         discord: "#5865F2",
         opensea: "#2081E2",

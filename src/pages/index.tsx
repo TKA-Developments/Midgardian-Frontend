@@ -11,7 +11,7 @@ import {
   FaPeopleArrows,
   FaRocket,
 } from "react-icons/fa";
-import { Cards } from "../components/base/Cards/Cards";
+import { Cards } from "../components/base/cards/Cards";
 import { Introduction } from "../components/base/Introduction";
 import { Jumbotron } from "../components/Jumbotron";
 import { ShowcaseImage } from "../components/base/ShowcaseImage";
@@ -26,6 +26,7 @@ import { useWindowSize } from "../hooks/useWindowSize";
 import { JoinDiscordButton } from "../components/JoinDiscordButton";
 import { Carrousel } from "../components/Carousel";
 import Head from "next/head";
+import { SubscribeForm } from "../components/form/SubscribeForm";
 
 const Index: NextPage = () => {
   const { width: windowWidth } = useWindowSize();
@@ -70,7 +71,7 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
                 Welcome to <span className="text-primary">Midgardian</span>
               </h2>
             )}
-            afterDescriptionComponent={JoinDiscordButton}
+            afterDescriptionComponent={SubscribeForm}
           />
         </div>
         <div className="my-14">

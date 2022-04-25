@@ -3,6 +3,7 @@ import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { DISCORD_URL, NAME } from "../../const";
 import { JoinDiscordButton } from "../JoinDiscordButton";
 import Image from "next/image";
+import { SubscribeForm } from "../form/SubscribeForm";
 
 export const Footer = () => {
   return (
@@ -16,7 +17,7 @@ export const Footer = () => {
         />
         <h2 className="text-white font-bold text-xl">{NAME}</h2>
       </div>
-      <JoinDiscordButton />
+      <SubscribeForm className="w-full max-w-none md:max-w-xl" />
       <p className="text-center text-white">
         VERIFIED SMART CONTRACT ADDRESS:
         0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D
