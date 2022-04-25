@@ -17,7 +17,7 @@ export const Cards = ({ cardsData }: CardsProps) => {
             containerStyle={{
               transform: `rotate(${rotation}deg)`,
               backgroundImage: `url('/img/Paper${(idx % 3) + 1}.svg')`,
-              backgroundSize: "cover",
+              backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
