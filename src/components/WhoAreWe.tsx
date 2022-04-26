@@ -14,8 +14,8 @@ export const WhoAreWe = () => {
     },
   ];
   return (
-    <div className="py-16 max-w-5xl mx-10 font-special-elite flex flex-col lg:flex-row items-center gap-10 mb-12">
-      <div>
+    <div className="py-16 max-w-5xl mx-10 font-special-elite flex flex-col lg:flex-row items-center gap-8 md:gap-20 my-20">
+      <div className="flex-1">
         <h2 className="text-[48px]  text-typography-primary text-center font-bold mb-5">
           The <span className="text-primary">Midgardian</span> Team
         </h2>
@@ -32,7 +32,7 @@ export const WhoAreWe = () => {
           })}
         </div>
       </div>
-      <div>
+      <div className="flex-1">
         <h3 className="text-typography-primary text-[18px]">
           <ReactMarkdown>{`Midgardian was created by two friends who felt nostalgic about the good old days playing MMORPG games
 \n &nbsp;

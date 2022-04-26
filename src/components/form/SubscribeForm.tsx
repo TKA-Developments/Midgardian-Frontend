@@ -44,7 +44,7 @@ const SubscribeFormInternal = ({
   }
   return (
     <div className={classNames("flex flex-col gap-4", className)}>
-      <div className="flex flex-col md:flex-row gap-3" {...props}>
+      <div className="flex flex-col w-full md:flex-row gap-3" {...props}>
         <TextInput
           placeholder="✉️ Email address"
           disabled={status === "sending"}
@@ -82,6 +82,8 @@ export const SubscribeForm = ({ className, ...props }: SubscribeFormProps) => {
           status={status ?? ""}
           message={message}
           onValidated={(formData) => subscribe(formData)}
+          className={className}
+          {...props}
         />
       )}
     />

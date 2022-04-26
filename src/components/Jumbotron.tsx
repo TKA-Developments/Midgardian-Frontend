@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export const Jumbotron = () => {
   const [layers, setLayers] = useState({
-    layer3: 0,
+    layer1: 0,
     layer2: 0,
   });
 
@@ -10,8 +10,8 @@ export const Jumbotron = () => {
     const onScroll = () => {
       const y = window.scrollY;
       setLayers({
-        layer3: y * 0.6,
-        layer2: y * 0.5,
+        layer1: y * 0.4,
+        layer2: y * 0.2,
       });
     };
 
@@ -23,25 +23,25 @@ export const Jumbotron = () => {
   return (
     <section className="relative overflow-y-hidden flex justify-center w-full h-full">
       <img
-        className="absolute bottom-0 w-full"
+        className="w-full"
         src="/img/parallax/3-min.png"
         alt="Sky and mountains"
-        style={{
-          top: layers.layer3,
-        }}
       />
       <img
         className="absolute bottom-0 w-full"
         src="/img/parallax/2-min.png"
         alt="Town and mountains"
         style={{
-          top: layers.layer2,
+          bottom: layers.layer2,
         }}
       />
       <img
-        className="w-full z-10"
+        className="absolute z-10"
         alt="Wizard sitting on the cliff edge"
         src="/img/parallax/1-min.png"
+        style={{
+          bottom: layers.layer1,
+        }}
       />
     </section>
   );

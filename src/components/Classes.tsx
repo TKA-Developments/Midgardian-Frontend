@@ -46,7 +46,7 @@ export type ClassInfoDisplayProps = {
 
 export const ClassInfoDisplay = ({ classInfo }: ClassInfoDisplayProps) => {
   return (
-    <div className="flex flex-col md:flex-row gap-5 mt-8">
+    <div className="flex flex-col md:flex-row gap-6 mt-8">
       <div className="flex-1 text-white flex flex-col gap-2">
         <h3 className="text-3xl font-bold">{classInfo.title}</h3>
         <p>{classInfo.description}</p>
@@ -85,7 +85,7 @@ export const Classes = () => {
   const selectedClassState = useState(0);
 
   return (
-    <div className="font-special-elite flex flex-col items-center gap-4 max-w-5xl mx-2 md:mx-10 my-10">
+    <div className="font-special-elite flex flex-col items-center gap-12 max-w-5xl mx-2 md:mx-10 my-20">
       <h2 className="text-primary text-4xl font-bold text-center">Classes</h2>
       <Switcher
         items={[
@@ -112,7 +112,7 @@ export const Classes = () => {
         ]}
         selectedIndexState={selectedClassState}
         containerProps={{
-          className: "gap-2 flex-col md:flex-row w-full md:w-auto",
+          className: "flex-col gap-12 md:gap-3 md:flex-row",
         }}
         ItemComponent={ClassSwitchItemComponent}
       />
