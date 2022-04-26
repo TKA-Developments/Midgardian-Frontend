@@ -2,14 +2,11 @@ import { useEffect, useState } from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
 import {
   FaChartBar,
-  FaDiscord,
-  FaGamepad,
   FaGhost,
   FaGlobe,
   FaNetworkWired,
   FaPen,
   FaPeopleArrows,
-  FaRocket,
 } from "react-icons/fa";
 import { Cards } from "./base/cards/Cards";
 
