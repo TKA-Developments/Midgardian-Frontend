@@ -1,7 +1,7 @@
 import { HTMLAttributes, useState } from "react";
 import { classNames } from "../../util/string";
 import { TextInput } from "../base/input/TextInput";
-import { Button } from "../button/Button";
+import { Button } from "../base/button/Button";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 type SubscribeFormInternalProps = {

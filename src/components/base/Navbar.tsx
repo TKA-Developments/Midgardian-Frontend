@@ -3,8 +3,8 @@ import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { DISCORD_URL, INSTAGRAM_URL, NAME, TWITTER_URL } from "../../const";
 import { classNames } from "../../util/string";
-import { Icon } from "../icons/Icon";
-import { IconHamburger } from "../icons/IconHamburger";
+import { Icon } from "./icons/Icon";
+import { IconHamburger } from "./icons/IconHamburger";
 import Image from "next/image";
 
 export enum NavbarLinkType {

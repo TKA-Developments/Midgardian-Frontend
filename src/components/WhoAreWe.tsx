@@ -14,7 +14,7 @@ export const WhoAreWe = () => {
     },
   ];
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-10 mb-12">
+    <div className="py-16 max-w-5xl mx-10 font-special-elite flex flex-col lg:flex-row items-center gap-10 mb-12">
       <div>
         <h2 className="text-[48px]  text-typography-primary text-center font-bold mb-5">
           The <span className="text-primary">Midgardian</span> Team
