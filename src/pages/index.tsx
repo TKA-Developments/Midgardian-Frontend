@@ -27,30 +27,11 @@ import { JoinDiscordButton } from "../components/JoinDiscordButton";
 import { Carrousel } from "../components/Carousel";
 import Head from "next/head";
 import { SubscribeForm } from "../components/form/SubscribeForm";
+import { Benefits } from "../components/Benefits";
+import { Club } from "../components/Club";
+import { Classes } from "../components/Classes";
 
 const Index: NextPage = () => {
-  const { width: windowWidth } = useWindowSize();
-
-  const [styleSign, setStyleSign] = useState<object>({});
-
-  useEffect(() => {
-    if ((windowWidth ?? 0) < 1024) {
-      setStyleSign({
-        backgroundImage: `url('/img/Board.svg')`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      });
-    } else {
-      setStyleSign({
-        backgroundImage: `url('/img/Board.svg')`,
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      });
-    }
-  }, [windowWidth]);
-
   return (
     <>
       <Head>
@@ -77,7 +58,7 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
         <div className="my-14">
           <Stats />
         </div>
-        <div className="my-24 mx-10 max-w-5xl">
+        <div className="my-24 mx-1 md:mx-10 max-w-5xl">
           <ShowcaseImage
             imageSource="/img/nft/11.png"
             description={`The Specs belongs to 5 job classes: Warrior, Cleric, Archer, Thief, Mage.
@@ -93,56 +74,9 @@ Each midgardian can be bought for 0.05 ETH`}
             title="The Specs"
           />
         </div>
-        <div
-          className="py-16 font-special-elite h-full w-full lg:w-auto"
-          style={styleSign}
-        >
-          <div
-            className="mx-auto w-96 mb-8 py-5 rotate-6 flex flex-row justify-center items-center"
-            style={{
-              backgroundImage: `url('/img/Sign.svg')`,
-              backgroundSize: "auto",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-          >
-            <h3 className="align-middle py-5 text-center text-[48px] font-bold text-primary">
-              The Benefits
-            </h3>
-          </div>
-          <Cards
-            cardsData={[
-              {
-                title: "Biggest Crypto MMORPG Community",
-                icon: () => (
-                  <FaPeopleArrows className="text-primary" size={30} />
-                ),
-              },
-              {
-                title: "Expand Your Network",
-                icon: () => (
-                  <FaNetworkWired className="text-primary" size={30} />
-                ),
-              },
-              {
-                title: "Own Full Commercial Rights",
-                icon: () => <FaPen className="text-primary" size={30} />,
-              },
-              {
-                title: "2000+ Provably Rare MMORPG Characters",
-                icon: () => <FaGhost className="text-primary" size={30} />,
-              },
-              {
-                title: "Grow Your Characters Through Involvement",
-                icon: () => <FaChartBar className="text-primary" size={30} />,
-              },
-              {
-                title: "Explore MMORPG Metaverses",
-                icon: () => <FaGlobe className="text-primary" size={30} />,
-              },
-            ]}
-          />
-        </div>
+        <Classes />
+        <Club />
+        <Benefits />
         <div
           id="roadmap"
           style={{

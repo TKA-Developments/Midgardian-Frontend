@@ -3,6 +3,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        "cobblestone-dimmed":
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/cobblestone.svg')",
         "scenery-dimmed":
           "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/scenery-min.png')",
       },
