@@ -1,5 +1,5 @@
 import { FaGamepad, FaRocket } from "react-icons/fa";
-import { StepsRow } from "./base/Steps/StepsRow";
+import { StepsRow } from "./base/steps/StepsRow";
 
 export const Roadmap = () => {
   return (
