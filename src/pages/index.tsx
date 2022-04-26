@@ -52,7 +52,7 @@ Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Rag
                 Welcome to <span className="text-primary">Midgardian</span>
               </h2>
             )}
-            afterDescriptionComponent={SubscribeForm}
+            afterDescriptionComponent={() => <SubscribeForm />}
           />
         </div>
         <div className="my-14">

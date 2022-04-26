@@ -6,6 +6,8 @@ import Script from "next/script";
 import Head from "next/head";
 
 function App({ Component, pageProps }: AppProps) {
+  const ComponentAny = Component as any;
+
   return (
     <>
       <Script
@@ -58,7 +60,7 @@ function App({ Component, pageProps }: AppProps) {
         <div className=" max-w-[1920px] w-full">
           <Navbar />
           <div className="pt-[76px]">
-            <Component {...pageProps} />
+            <ComponentAny {...pageProps} />
             <Footer />
           </div>
         </div>

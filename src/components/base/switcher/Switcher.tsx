@@ -27,6 +27,7 @@ export const Switcher = <T,>({
     >
       {items.map((item, index) => (
         <ItemComponent
+          key={index}
           active={index == selectedIndex}
           action={() => setSelectedIndexState(index)}
           data={item}

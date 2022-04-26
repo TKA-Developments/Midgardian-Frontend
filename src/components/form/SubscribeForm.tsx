@@ -6,7 +6,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 type SubscribeFormInternalProps = {
   status: string;
-  message?: string;
+  message: string | Error | null;
   onValidated: (a: any) => any;
 } & HTMLAttributes<HTMLDivElement>;
 
@@ -24,7 +24,7 @@ const SubscribeFormInternal = ({
     case "error":
       messageComponent = (
         <div
-          dangerouslySetInnerHTML={{ __html: message }}
+          dangerouslySetInnerHTML={{ __html: message?.toString() ?? "" }}
           className="text-red-500"
         />
       );
@@ -79,7 +79,7 @@ export const SubscribeForm = ({ className, ...props }: SubscribeFormProps) => {
       }
       render={({ subscribe, status, message }) => (
         <SubscribeFormInternal
-          status={status}
+          status={status ?? ""}
           message={message}
           onValidated={(formData) => subscribe(formData)}
         />
