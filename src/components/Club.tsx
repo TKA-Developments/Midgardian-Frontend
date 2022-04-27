@@ -13,7 +13,9 @@ export const Club = () => {
           }
         </h3>
       </div>
-      <JoinDiscordButton />
+      <div className="flex justify-center w-full px-[32px] md:mx-auto">
+        <JoinDiscordButton />
+      </div>
     </div>
   );
 };

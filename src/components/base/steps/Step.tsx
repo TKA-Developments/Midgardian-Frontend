@@ -6,7 +6,7 @@ export type StepProps = {
 
 export const Step = ({ icon: Icon, title, description }: StepProps) => {
   return (
-    <div className="flex flex-row gap-3">
+    <div className="flex flex-row gap-[16px]">
       {Icon && (
         <div>
           <Icon />

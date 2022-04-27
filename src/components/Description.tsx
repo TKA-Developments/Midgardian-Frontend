@@ -12,7 +12,7 @@ export const Description = () => {
 \n
 Remember the good old days in Runescape, Final Fantasy, WoW, Maple Story, or Ragnarok Online? You are not alone :)`}
         title={() => (
-          <h2 className="text-[60px] font-bold mt-4 mb-8 text-typography-primary font-special-elite">
+          <h2 className="text-[60px] font-bold text-typography-primary font-special-elite">
             Welcome to <span className="text-primary">Midgardian</span>
           </h2>
         )}

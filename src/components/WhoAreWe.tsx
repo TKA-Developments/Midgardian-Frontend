@@ -14,7 +14,7 @@ export const WhoAreWe = () => {
     },
   ];
   return (
-    <div className="py-16 max-w-5xl mx-10 font-special-elite flex flex-col lg:flex-row items-center gap-8 md:gap-20 my-20">
+    <div className="py-16 max-w-5xl mx-10 font-special-elite flex flex-col lg:flex-row items-center gap-[42px] lg:gap-[144px] my-20">
       <div className="flex-1">
         <h2 className="text-[48px]  text-typography-primary text-center font-bold mb-5">
           The <span className="text-primary">Midgardian</span> Team
@@ -25,7 +25,7 @@ export const WhoAreWe = () => {
               <div key={idx} className="w-full">
                 <img
                   src={member.imageSource}
-                  className="object-cover w-full aspect-square"
+                  className="object-cover w-full max-w-[233px] aspect-square"
                 />
               </div>
             );

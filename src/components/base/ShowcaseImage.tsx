@@ -32,7 +32,10 @@ export const ShowcaseImage = ({
   } else {
     showcase = (
       <div className="bg-[url('/img/wood3.jpg')] p-1 rounded-xl">
-        <img src={ImageSource} className="w-full object-cover" />
+        <img
+          src={ImageSource}
+          className="max-w-[400px] md:w-full object-cover"
+        />
       </div>
     );
   }
@@ -42,13 +45,13 @@ export const ShowcaseImage = ({
       <div className="flex-1">
         {Title &&
           (typeof Title === "string" ? (
-            <h2 className="text-[60px] font-bold mt-4 mb-8 text-typography-primary">
+            <h2 className="text-[60px] font-bold text-typography-primary">
               {Title}
             </h2>
           ) : (
             <Title />
           ))}
-        <h3 className="text-[18px] mt-2 mb-3 text-typography-primary">
+        <h3 className="text-[18px] mt-[10px] mb-[8px] text-typography-primary">
           <ReactMarkdown>{description ?? ""}</ReactMarkdown>
         </h3>
         {AfterDescriptionComponent && <AfterDescriptionComponent />}
