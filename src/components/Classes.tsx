@@ -5,6 +5,7 @@ export type ClassInfo = {
   title: string;
   description: string;
   imageUrl: string;
+  statsImageUrl: string;
 };
 
 export const classes: Array<ClassInfo> = [
@@ -13,30 +14,35 @@ export const classes: Array<ClassInfo> = [
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
     imageUrl: "/img/nft/1.png",
+    statsImageUrl: "/img/stats/Warrior - radar plot.png",
   },
   {
     title: "Mage",
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
     imageUrl: "/img/nft/2.png",
+    statsImageUrl: "/img/stats/Mage - radar plot.png",
   },
   {
     title: "Archer",
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
     imageUrl: "/img/nft/3.png",
+    statsImageUrl: "/img/stats/Archer - radar plot.png",
   },
   {
     title: "Cleric",
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
     imageUrl: "/img/nft/4.png",
+    statsImageUrl: "/img/stats/Cleric - radar plot.png",
   },
   {
     title: "Thief",
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
     imageUrl: "/img/nft/5.png",
+    statsImageUrl: "/img/stats/Thief - radar plot.png",
   },
 ];
 
@@ -55,7 +61,7 @@ export const ClassInfoDisplay = ({ classInfo }: ClassInfoDisplayProps) => {
         <img src={classInfo.imageUrl} className="object-cover" />
       </div>
       <div className="flex-1">
-        <img src="/img/graph.png" />
+        <img src={classInfo.statsImageUrl} />
       </div>
     </div>
   );
