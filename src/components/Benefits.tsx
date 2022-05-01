@@ -35,7 +35,7 @@ export const Benefits = () => {
 
   return (
     <div
-      className="py-16 font-special-elite h-full w-full lg:w-auto"
+      className="py-[512px] lg:py-16 font-special-elite h-full w-full lg:w-auto"
       style={styleSign}
     >
       <div
