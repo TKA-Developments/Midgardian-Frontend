@@ -12,7 +12,7 @@ export const Roadmap = () => {
       }}
       className=" flex justify-center w-full py-16 font-special-elite"
     >
-      <div className="max-w-5xl mx-10">
+      <div className="py-16 max-w-5xl mx-10">
         <h2 className="text-center mb-4 text-[48px] font-bold text-primary">
           Roadmap
         </h2>

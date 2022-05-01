@@ -32,16 +32,13 @@ export const ShowcaseImage = ({
   } else {
     showcase = (
       <div className="bg-[url('/img/wood3.jpg')] p-1 rounded-xl">
-        <img
-          src={ImageSource}
-          className="max-w-[400px] md:w-full object-cover"
-        />
+        <img src={ImageSource} className="max-w-[400px] w-full object-cover" />
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col lg:flex-row gap-14 font-special-elite">
+    <div className="flex flex-col lg:flex-row gap-14 font-special-elite w-full">
       <div className="flex-1">
         {Title &&
           (typeof Title === "string" ? (

@@ -2,7 +2,7 @@ import { ShowcaseImage } from "./base/ShowcaseImage";
 
 export const Specs = () => {
   return (
-    <div className="my-24 mx-1 md:mx-10 max-w-5xl">
+    <div className="my-24 py-16 max-w-5xl mx-10">
       <ShowcaseImage
         imageSource="/img/nft/11.png"
         description={`The Specs belongs to 5 job classes: Warrior, Cleric, Archer, Thief, Mage.

@@ -13,35 +13,35 @@ export const classes: Array<ClassInfo> = [
     title: "Warrior",
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
-    imageUrl: "/img/nft/1.png",
+    imageUrl: "/img/classes/warrior.png",
     statsImageUrl: "/img/stats/Warrior - radar plot.png",
   },
   {
     title: "Mage",
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
-    imageUrl: "/img/nft/2.png",
+    imageUrl: "/img/classes/mage.png",
     statsImageUrl: "/img/stats/Mage - radar plot.png",
   },
   {
     title: "Archer",
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
-    imageUrl: "/img/nft/3.png",
+    imageUrl: "/img/classes/archer.png",
     statsImageUrl: "/img/stats/Archer - radar plot.png",
   },
   {
     title: "Cleric",
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
-    imageUrl: "/img/nft/4.png",
+    imageUrl: "/img/classes/cleric.png",
     statsImageUrl: "/img/stats/Cleric - radar plot.png",
   },
   {
     title: "Thief",
     description:
       "Role 1 is a mutan who has a power too .... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
-    imageUrl: "/img/nft/5.png",
+    imageUrl: "/img/classes/thief.png",
     statsImageUrl: "/img/stats/Thief - radar plot.png",
   },
 ];
@@ -91,7 +91,7 @@ export const Classes = () => {
   const selectedClassState = useState(0);
 
   return (
-    <div className="font-special-elite flex flex-col items-center gap-[32px] max-w-5xl mx-2 md:mx-10 my-20">
+    <div className="font-special-elite flex flex-col items-center gap-[32px] py-16 max-w-5xl mx-10 my-20">
       <h2 className="text-primary text-4xl font-bold text-center">Classes</h2>
       <Switcher
         items={[

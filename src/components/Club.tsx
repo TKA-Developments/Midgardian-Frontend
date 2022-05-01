@@ -2,7 +2,7 @@ import { JoinDiscordButton } from "./JoinDiscordButton";
 
 export const Club = () => {
   return (
-    <div className="bg-cobblestone-dimmed bg-cover max-w-5xl md:mx-10 py-16 my-12 flex flex-col justify-center items-center text-center gap-8">
+    <div className="bg-cobblestone-dimmed bg-cover py-16 max-w-5xl px-10 my-12 flex flex-col justify-center items-center text-center gap-8">
       <div>
         <h2 className="text-primary font-special-elite text-4xl font-bold">
           Midguardian Club
