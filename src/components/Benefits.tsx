@@ -11,33 +11,8 @@ import {
 import { Cards } from "./base/cards/Cards";
 
 export const Benefits = () => {
-  const { width: windowWidth } = useWindowSize();
-
-  const [styleSign, setStyleSign] = useState<object>({});
-
-  useEffect(() => {
-    if ((windowWidth ?? 0) < 1024) {
-      setStyleSign({
-        backgroundImage: `url('/img/board.svg')`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      });
-    } else {
-      setStyleSign({
-        backgroundImage: `url('/img/board.svg')`,
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      });
-    }
-  }, [windowWidth]);
-
   return (
-    <div
-      className="py-[512px] lg:py-16 font-special-elite h-full w-full lg:w-auto"
-      style={styleSign}
-    >
+    <div className="border-t-8 lg:border-t-0 border-black border-b-8 lg:border-b-0 bg-[#a78064] lg:bg-inherit lg:bg-[url('/img/board.svg')] lg:bg-contain lg:bg-no-repeat lg:bg-center py-16 lg:py-16 font-special-elite h-full w-full lg:w-auto">
       <div
         className="mx-auto w-96 mb-8 py-5 rotate-6 flex flex-row justify-center items-center"
         style={{
