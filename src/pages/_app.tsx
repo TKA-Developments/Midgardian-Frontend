@@ -1,9 +1,9 @@
 import "../../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Footer } from "../components/base/Footer";
-import { Navbar } from "../components/Navbar";
+import { Footer } from "../common/base/Footer";
 import Script from "next/script";
 import Head from "next/head";
+import { Navbar } from "../modules/index/components/Navbar";
 
 function App({ Component, pageProps }: AppProps) {
   const ComponentAny = Component as any;
@@ -56,15 +56,13 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <main className="flex justify-center items-center bg-background overflow-hidden">
-        <div className=" max-w-[1920px] w-full">
-          <Navbar />
-          <div className="pt-[76px]">
+      <body className="bg-background">
+        <main className="flex justify-center items-center overflow-hidden">
+          <div className=" max-w-[1920px] w-full">
             <ComponentAny {...pageProps} />
-            <Footer />
           </div>
-        </div>
-      </main>
+        </main>
+      </body>
     </>
   );
 }

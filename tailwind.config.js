@@ -10,7 +10,8 @@ module.exports = {
       },
       colors: {
         primary: "#ECB365",
-        "typography-primary": "#FFF",
+        "on-background": "#FFF",
+        disabled: "#CECCCB",
         background: "#141e27",
         "background-secondary": "#496D8E",
         secondary: "#203239",
