@@ -1,3 +1,5 @@
 import { Index } from "../ui/index/index";
 
-export default () => <Index />;
+export default function Page() {
+  return <Index />;
+}

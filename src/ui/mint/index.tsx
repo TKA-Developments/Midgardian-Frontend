@@ -35,7 +35,7 @@ export const Mint = () => {
         <title>Mint - Midgardian</title>
       </Head>
       <Navbar />
-      <div className="pt-[76px] flex flex-col items-center">
+      <div className="pt-[76px] max-w-5xl mx-10 flex flex-col items-center">
         <h2 className="text-primary font-bold text-3xl mt-4 mb-2">
           Mint a Midgardian
         </h2>

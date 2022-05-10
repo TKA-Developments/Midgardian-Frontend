@@ -1,4 +1,3 @@
-import { classNames } from "../../util/string";
 import ReactMarkdown from "react-markdown";
 
 export type ShowcaseImageHorizontalImage = {

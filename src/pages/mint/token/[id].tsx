@@ -10,23 +10,22 @@ import {
 import { providerRPC } from "../../../data/source/ethereum-rpc/provider";
 import { Token } from "../../../ui/mint/token";
 import {
+  Resource,
   resourceError,
   resourceLoading,
   resourceSuccess,
 } from "../../../util/resource";
 
-export default () => {
+export default function Page() {
   const router = useRouter();
 
-  const idRes = useMemo(() => {
+  const idRes = useMemo<Resource<BigNumber>>(() => {
     if (!router.isReady) return resourceLoading();
-
-    let idResult = null;
 
     try {
       const idRoute = router.query.id;
       if (typeof idRoute === "string" && idRoute.match(/^[0-9a-f]+$/i)) {
-        idResult = BigNumber.from(idRoute);
+        return resourceSuccess(BigNumber.from(idRoute));
       }
     } catch (err) {
       console.error(err);
@@ -37,8 +36,8 @@ export default () => {
       }
     }
 
-    return resourceSuccess(idResult);
+    return resourceError(Error("Unreachable"));
   }, [router.isReady]);
 
   return <Token idRes={idRes} />;
-};
+}

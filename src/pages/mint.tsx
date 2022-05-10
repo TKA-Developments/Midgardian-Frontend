@@ -1,3 +1,5 @@
 import { Mint } from "../ui/mint";
 
-export default () => <Mint />;
+export default function Page() {
+  return <Mint />;
+}

@@ -1,8 +1,8 @@
 export const NAME = "Midgardian";
 
 export const DISCORD_URL = "https://discord.gg/687CYXt292";
-export const INSTAGRAM_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-export const TWITTER_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+export const INSTAGRAM_URL = "https://www.instagram.com/midgardian.club/";
+export const TWITTER_URL = "https://twitter.com/MidgardianClub";
 
 export const SMARTCONTRACT_ADDRESS =
   "0x73920fe556a604da68165634a334e9760760a80e";
