@@ -7,7 +7,7 @@ import {
   FaPen,
   FaPeopleArrows,
 } from "react-icons/fa";
-import { Cards } from "../../../common/components/base/cards/Cards";
+import { Cards } from "./cards/Cards";
 
 export const Benefits = () => {
   return (

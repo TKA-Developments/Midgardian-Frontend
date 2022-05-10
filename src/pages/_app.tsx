@@ -1,9 +1,9 @@
 import "../../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Footer } from "../common/base/Footer";
+import { Footer } from "../common/components/base/Footer";
 import Script from "next/script";
 import Head from "next/head";
-import { Navbar } from "../modules/index/components/Navbar";
+import { Navbar } from "../ui/index/components/Navbar";
 
 function App({ Component, pageProps }: AppProps) {
   const ComponentAny = Component as any;

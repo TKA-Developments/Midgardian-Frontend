@@ -1,3 +1,3 @@
-import { Index } from "../modules/index";
+import { Index } from "../ui/index/index";
 
 export default () => <Index />;

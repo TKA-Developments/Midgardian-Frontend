@@ -1,6 +1,6 @@
 import { Carrousel } from "./Carousel";
-import { SubscribeForm } from "./form/SubscribeForm";
 import { ShowcaseImage } from "../../../common/components/base/ShowcaseImage";
+import { SubscribeForm } from "../../../common/components/form/SubscribeForm";
 
 export const Description = () => {
   return (

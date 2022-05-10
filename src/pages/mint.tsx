@@ -1,3 +1,3 @@
-import { Mint } from "../modules/mint";
+import { Mint } from "../ui/mint";
 
 export default () => <Mint />;
