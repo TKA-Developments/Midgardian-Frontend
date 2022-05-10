@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { classNames } from "../../util/string";
+import { classNames } from "../../../util/string";
 
 export type ButtonChoiceProps<T> = {
   choice: T;
