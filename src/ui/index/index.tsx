@@ -32,7 +32,6 @@ export const Index = () => {
         <Roadmap />
         <WhoAreWe />
       </div>
-      <Footer />
     </>
   );
 };

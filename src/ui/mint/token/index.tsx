@@ -1,11 +1,14 @@
 import { useWeb3React } from "@web3-react/core";
 import { BigNumber } from "ethers";
+import Lottie from "lottie-react";
 import Head from "next/head";
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "../../../common/components/base/button/Button";
 import { Card } from "../../../common/components/base/Card";
 import { useMidgardianContract } from "../../../contract/midgardian";
 import { providerRPC } from "../../../data/source/ethereum-rpc/provider";
+import { NFTData } from "../../../domain/model/nft-data/NFTData";
+import { NFTMetadata } from "../../../domain/model/nft-metadata/NFTMetadata";
 import {
   Resource,
   resourceLoading,
@@ -13,21 +16,10 @@ import {
 } from "../../../util/resource";
 import { Navbar } from "../../index/components/Navbar";
 import { AttributeCard } from "./components/AttributeCard";
+import swordsAnimation from "../../../../public/img/swords.json";
 
 export type TokenProps = {
   idRes: Resource<BigNumber>;
-};
-
-export type Attribute = {
-  trait_type: string;
-  value: string;
-};
-
-export type NFTMetadata = {
-  name: string;
-  description: string;
-  image: string;
-  attributes: Array<Attribute>;
 };
 
 export const Token = ({ idRes }: TokenProps) => {
@@ -36,22 +28,30 @@ export const Token = ({ idRes }: TokenProps) => {
   const midgardianContractUser = useMidgardianContract(library);
   const midgardianContractRPC = useMidgardianContract(providerRPC);
 
-  const fetchImageMetadata = useCallback(
+  const fetchNFTData = useCallback(
     async (id: BigNumber) => {
-      const metadataURI = await midgardianContractRPC.uri(id);
-      const resp = await fetch(metadataURI);
-      return (await resp.json()) as NFTMetadata;
+      const isTokenAlreadyMintedProm =
+        midgardianContractRPC.isTokenAlreadyMinted(id);
+      const respMetadataProm = fetch(
+        `https://gateway.pinata.cloud/ipfs/QmenMY5suDjf9xEDZYGQuqMRbQ4GKUnhwwnVZD8ZUjheJK/${id}.json`
+      ).then((data) => data.json()) as Promise<NFTMetadata>;
+      const [respMetadata, isTokenAlreadyMinted] = await Promise.all([
+        respMetadataProm,
+        isTokenAlreadyMintedProm,
+      ]);
+
+      return new NFTData(respMetadata, isTokenAlreadyMinted);
     },
     [midgardianContractRPC]
   );
 
-  const [nftMetadataRes, setNFTMetadata] = useState<Resource<NFTMetadata>>(
+  const [nftMetadataRes, setNFTMetadata] = useState<Resource<NFTData>>(
     resourceLoading()
   );
 
   useEffect(() => {
     if (idRes.isLoading) return;
-    fetchImageMetadata(idRes.data!!)
+    fetchNFTData(idRes.data!!)
       .then((nftMetadata) => {
         setNFTMetadata(resourceSuccess(nftMetadata));
       })
@@ -90,7 +90,13 @@ export const Token = ({ idRes }: TokenProps) => {
                     <img src="/img/icon/ethereum.png" className="w-7 h-8" />
                     <h4 className="text-2xl">0.0005</h4>
                   </div>
-                  <Button iconUrl="/img/icon/wallet.png">Buy Now</Button>
+                  {nftMetadataRes.data.isSold ? (
+                    <Button iconUrl="/img/icon/wallet.png" disabled={true}>
+                      Sold Out
+                    </Button>
+                  ) : (
+                    <Button iconUrl="/img/icon/wallet.png">Buy Now</Button>
+                  )}
                 </Card>
                 <Card
                   title="Details"
@@ -120,7 +126,7 @@ export const Token = ({ idRes }: TokenProps) => {
                     key={index}
                     imgUrl="/img/icon/mage.png"
                     value={attribute.value}
-                    title={attribute.trait_type}
+                    title={attribute.traitType}
                   />
                 ))}
                 {nftMetadata.attributes.map((attribute, index) => (
@@ -128,7 +134,7 @@ export const Token = ({ idRes }: TokenProps) => {
                     key={index}
                     imgUrl="/img/icon/thief.png"
                     value={attribute.value}
-                    title={attribute.trait_type}
+                    title={attribute.traitType}
                   />
                 ))}
                 {nftMetadata.attributes.map((attribute, index) => (
@@ -136,7 +142,7 @@ export const Token = ({ idRes }: TokenProps) => {
                     key={index}
                     imgUrl="/img/icon/warrior.png"
                     value={attribute.value}
-                    title={attribute.trait_type}
+                    title={attribute.traitType}
                   />
                 ))}
               </Card>
@@ -145,6 +151,17 @@ export const Token = ({ idRes }: TokenProps) => {
         </div>
       );
     }
+  } else {
+    content = (
+      <div className="flex flex-col items-center w-full pt-16">
+        <h2 className="text-on-background text-4xl">Loading...</h2>
+        <Lottie
+          animationData={swordsAnimation}
+          className="w-56 h-56"
+          loop={true}
+        />
+      </div>
+    );
   }
 
   return (
@@ -153,7 +170,9 @@ export const Token = ({ idRes }: TokenProps) => {
         <title>Mint - Midgardian</title>
       </Head>
       <Navbar />
-      <div className="pt-[76px] flex flex-col items-center">{content}</div>
+      <div className="pt-[76px] mb-32 flex flex-col items-center">
+        {content}
+      </div>
     </>
   );
 };

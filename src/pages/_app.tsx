@@ -57,9 +57,10 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <body className="bg-background">
-        <main className="flex justify-center items-center overflow-hidden">
-          <div className=" max-w-[1920px] w-full">
+        <main className="flex flex-col items-center overflow-hidden">
+          <div className="max-w-[1920px] w-full">
             <ComponentAny {...pageProps} />
+            <Footer />
           </div>
         </main>
       </body>
