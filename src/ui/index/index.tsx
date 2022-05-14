@@ -13,7 +13,7 @@ import { Navbar } from "./components/Navbar";
 import { Introduction } from "../../common/components/base/Introduction";
 import { Footer } from "../../common/components/base/Footer";
 
-export const Index = () => {
+export const IndexUI = () => {
   return (
     <>
       <Head>

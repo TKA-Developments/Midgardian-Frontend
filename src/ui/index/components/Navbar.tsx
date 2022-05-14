@@ -1,7 +1,7 @@
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { DISCORD_URL, INSTAGRAM_URL, NAME, TWITTER_URL } from "../../../const";
 import {
-  Navbar as BaseNavbar,
+  BaseNavbar as BaseNavbar,
   NavbarLinkType,
 } from "../../../common/components/base/Navbar";
 

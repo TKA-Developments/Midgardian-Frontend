@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Button } from "../../../common/components/base/button/Button";
 import { Card } from "../../../common/components/base/Card";
 import { useMidgardianContract } from "../../../contract/midgardian";
-import { providerRPC } from "../../../data/source/ethereum-rpc/provider";
+import { rpcConnector } from "../../../data/source/ethereum-rpc/connector";
 import { NFTData } from "../../../domain/model/nft-data/NFTData";
 import { NFTMetadata } from "../../../domain/model/nft-metadata/NFTMetadata";
 import {
@@ -14,19 +14,20 @@ import {
   resourceLoading,
   resourceSuccess,
 } from "../../../util/resource";
-import { Navbar } from "../../index/components/Navbar";
 import { AttributeCard } from "./components/AttributeCard";
 import swordsAnimation from "../../../../public/img/swords.json";
+import { Navbar } from "../components/navbar";
+import { Mint } from "../mint";
 
 export type TokenProps = {
   idRes: Resource<BigNumber>;
 };
 
-export const Token = ({ idRes }: TokenProps) => {
+export const TokenUI = ({ idRes }: TokenProps) => {
   const { library } = useWeb3React();
 
   const midgardianContractUser = useMidgardianContract(library);
-  const midgardianContractRPC = useMidgardianContract(providerRPC);
+  const midgardianContractRPC = useMidgardianContract(rpcConnector);
 
   const fetchNFTData = useCallback(
     async (id: BigNumber) => {
@@ -165,14 +166,13 @@ export const Token = ({ idRes }: TokenProps) => {
   }
 
   return (
-    <>
+    <Mint>
       <Head>
         <title>Mint - Midgardian</title>
       </Head>
-      <Navbar />
       <div className="pt-[76px] mb-32 flex flex-col items-center">
         {content}
       </div>
-    </>
+    </Mint>
   );
 };

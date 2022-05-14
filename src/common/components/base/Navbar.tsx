@@ -1,10 +1,11 @@
-import { HTMLAttributes, useState } from "react";
+import { HTMLAttributes, ReactNode, useState } from "react";
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { Icon } from "./icons/Icon";
 import { IconHamburger } from "./icons/IconHamburger";
 import Image from "next/image";
 import { classNames } from "../../../util/string";
+import { useWeb3React } from "@web3-react/core";
 
 export enum NavbarLinkType {
   Scroll,
@@ -31,10 +32,18 @@ export type NavbarProps = {
   links: Array<NavbarLink>;
   socials?: Array<NavbarSocial>;
   logo?: NavbarLogo;
+  rightComponent?: ReactNode;
 };
 
-export const Navbar = ({ logo, name, links, socials }: NavbarProps) => {
+export const BaseNavbar = ({
+  logo,
+  name,
+  links,
+  socials,
+  rightComponent: RightComponent,
+}: NavbarProps) => {
   const [isNavbarOpened, setIsNavbarOpened] = useState(false);
+
   return (
     <nav className="px-7 absolute z-50 w-full max-w-[1920px] bg-secondary min-h-[76px] pt-4">
       <div className="flex flex-row flex-wrap justify-between w-full">
@@ -62,18 +71,18 @@ export const Navbar = ({ logo, name, links, socials }: NavbarProps) => {
         </button>
         <div
           className={classNames(
-            `md:flex w-full md:w-auto justify-end gap-10 items-center md-auto`,
+            `md:flex md:flex-row w-full md:w-auto justify-end gap-10 items-center md-auto`,
             isNavbarOpened ? "" : "hidden"
           )}
         >
           <ul className="flex flex-col md:flex-row gap-1 md:gap-3 text-[14px]">
-            {links.map((link) => {
+            {links.map((link, idx) => {
               switch (link.type) {
                 case NavbarLinkType.Href:
                   return (
-                    <li className="flex">
+                    <li className="flex" key={idx}>
                       <a
-                        className="text-white pl-2 py-2 w-full"
+                        className="text-white pl-2 py-2 w-full whitespace-nowrap"
                         href={link.destination}
                       >
                         {link.text}
@@ -82,10 +91,10 @@ export const Navbar = ({ logo, name, links, socials }: NavbarProps) => {
                   );
                 case NavbarLinkType.Scroll:
                   return (
-                    <li className="flex">
+                    <li className="flex" key={idx}>
                       <Link
                         smooth={true}
-                        className="text-white pl-2 py-2 w-full cursor-pointer"
+                        className="text-white pl-2 py-2 w-full cursor-pointer whitespace-nowrap"
                         to={link.destination}
                       >
                         {link.text}
@@ -97,6 +106,7 @@ export const Navbar = ({ logo, name, links, socials }: NavbarProps) => {
               }
             })}
           </ul>
+          {RightComponent && <RightComponent />}
           {socials && (
             <ul className="my-6 md:my-0 justify-center flex flex-row gap-10 md:gap-4">
               {socials.map((social, idx) => (

@@ -4,6 +4,8 @@ import { Footer } from "../common/components/base/Footer";
 import Script from "next/script";
 import Head from "next/head";
 import { Navbar } from "../ui/index/components/Navbar";
+import { Web3ReactProvider } from "@web3-react/core";
+import { getProvider } from "../data/source/web3/provider";
 
 function App({ Component, pageProps }: AppProps) {
   const ComponentAny = Component as any;
@@ -59,8 +61,10 @@ function App({ Component, pageProps }: AppProps) {
       <body className="bg-background">
         <main className="flex flex-col items-center overflow-hidden">
           <div className="max-w-[1920px] w-full">
-            <ComponentAny {...pageProps} />
-            <Footer />
+            <Web3ReactProvider getLibrary={getProvider}>
+              <ComponentAny {...pageProps} />
+              <Footer />
+            </Web3ReactProvider>
           </div>
         </main>
       </body>

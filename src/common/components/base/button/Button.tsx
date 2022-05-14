@@ -15,6 +15,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => (
   <button
+    {...props}
     className={classNames(
       "text-background font-bold w-full rounded-xl flex flex-row items-center justify-center gap-2",
       disabled ? "bg-disabled" : "bg-primary",
@@ -22,7 +23,6 @@ export const Button = ({
       className
     )}
     disabled={disabled}
-    {...props}
   >
     {iconUrl && <img src={iconUrl} className="w-8 h-8" />}
     {props.children}

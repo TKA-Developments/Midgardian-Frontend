@@ -7,8 +7,8 @@ import {
   midgardianContract,
   useMidgardianContract,
 } from "../../../contract/midgardian";
-import { providerRPC } from "../../../data/source/ethereum-rpc/provider";
-import { Token } from "../../../ui/mint/token";
+import { rpcConnector } from "../../../data/source/ethereum-rpc/connector";
+import { TokenUI } from "../../../ui/mint/token";
 import {
   Resource,
   resourceError,
@@ -39,5 +39,5 @@ export default function Page() {
     return resourceError(Error("Unreachable"));
   }, [router.isReady]);
 
-  return <Token idRes={idRes} />;
+  return <TokenUI idRes={idRes} />;
 }

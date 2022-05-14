@@ -18,7 +18,7 @@ export const Stats = ({ data }: StatsProps) => {
       {data.map(({ icon: Icon, title, subtitle }, idx) => (
         <>
           {idx !== 0 && <StatsSeparator />}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center" key={idx}>
             {Icon && (
               <div className="mb-5">
                 <Icon />
